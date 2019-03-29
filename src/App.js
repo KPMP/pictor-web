@@ -22,13 +22,13 @@ const store = applyMiddleware(thunk)(createStore)(
 );
 const saveState = () => {
   window.sessionStorage.setItem(
-    'redux-store',
+    'viz-demo-store',
     JSON.stringify(store.getState())
   );
 };
 
 // *** Get a new tracking Id and add it here *** //
-const GA_TRACKING_ID = '';
+const GA_TRACKING_ID = 'UA-124331187-7';
 
 ReactGA.initialize(GA_TRACKING_ID);
 function logPageView(location, action) {
