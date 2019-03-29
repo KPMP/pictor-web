@@ -22,7 +22,7 @@ const store = applyMiddleware(thunk)(createStore)(
 );
 const saveState = () => {
   window.sessionStorage.setItem(
-    'redux-store',
+    'viz-demo-store',
     JSON.stringify(store.getState())
   );
 };
