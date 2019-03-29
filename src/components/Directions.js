@@ -15,21 +15,11 @@ class Directions extends Component {
 	                <Col>
 	                  <h3>Developer TODOs: </h3>
 	                  <ul>
-	                    <li> Change the title in public/index.html</li>
-	                    <li>
-	                      {' '}
-	                      Ask for the application specific logo and replace the
-	                      current logo
-	                    </li>
 	                    <li>
 	                      {' '}
 	                      Determine whether we need a username in the header. If so,
 	                      write a card to add it (and probably borrow code from
 	                      orion-web to do so).
-	                    </li>
-	                    <li>
-	                      {' '}
-	                      Have a drink and celebrate, we have a new web project!
 	                    </li>
 	                  </ul>
 	                </Col>
