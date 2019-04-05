@@ -17,13 +17,17 @@ body {
 		text-decoration: none !important;
 
 		.navbar-brand img.logo {
-			width: 80px;
-			min-width: 80px;
+			height: 50px;
 		}
 	}
 
 	a.dropdown-toggle {
 
+	}
+	
+	.navbar-brand {
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
 	}
 
 	#nav-user-dropdown-menu {
