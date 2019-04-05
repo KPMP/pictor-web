@@ -36,7 +36,7 @@ class LandingPage extends Component {
 			<Container>
 				<Row>
 					<Col xs="12">
-						<Card>
+						<Card className="mt-3">
 							<CardBody id="search-for-gene">
 								<h5>Search by gene</h5>
 								<Form>
