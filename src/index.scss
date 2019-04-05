@@ -1,1 +1,9 @@
 @import "kpmp-base.scss";
+
+#search-for-gene {
+
+	.ant-select-auto-complete.ant-select .ant-input {
+		height: 38px !important;
+	}
+
+}
