@@ -11,7 +11,7 @@ import createHistory from 'history/createBrowserHistory';
 import { Route, Switch, Router } from 'react-router-dom';
 import ErrorBoundaryContainer from './components/Error/ErrorBoundaryContainer';
 import Oops from './components/Error/Oops';
-import Directions from './components/Directions';
+import LandingPage from './components/Landing/LandingPage';
 
 const cacheStore = window.sessionStorage.getItem('redux-store');
 const initialState = cacheStore ? JSON.parse(cacheStore) : loadedState;
@@ -58,7 +58,7 @@ class App extends Component {
         	<ErrorBoundaryContainer>
 	            <NavBar />
 	            	<Switch>
-	            		<Route exact path="/" component={Directions} store={store} />
+	            		<Route exact path="/" component={LandingPage} store={store} />
 	            		<Route exact path="/oops" component={Oops} />
 	            	</Switch>
 	            <NavFooter />
