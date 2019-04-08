@@ -7,10 +7,13 @@ class LandingPage extends Component {
 	
 	constructor(props) {
 		super(props);
+		let geneList = genes.genes;
+		geneList.sort();
 		this.state = {
 			dataSource : [],
 			validateStatus: "success",
-			help: ""
+			help: "",
+			geneList: geneList
 		}
 	}
 	
@@ -18,9 +21,7 @@ class LandingPage extends Component {
 		if (value === "" || value === undefined) {
 			this.setState({dataSource: []})
 		} else {
-			let geneList = genes.genes;
-			geneList.sort();
-			let limitedList = geneList.filter(gene => gene.toUpperCase().indexOf(value.toUpperCase()) !== -1);
+			let limitedList = this.state.geneList.filter(gene => gene.toUpperCase().indexOf(value.toUpperCase()) !== -1);
 			if (limitedList.length === 0) {
 				this.setState({validateStatus: "error", help: "Gene not found"});
 			} else {
