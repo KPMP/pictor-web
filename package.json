@@ -2,7 +2,9 @@
   "name": "pictor-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/gene-search",
   "dependencies": {
+    "antd": "3.16.1",
     "axios": "0.18.0",
     "bootstrap-css-only": "4.3.1",
     "history": "4.9.0",
