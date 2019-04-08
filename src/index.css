@@ -44,7 +44,6 @@ body {
     height: 330px; }
 
 #title-text {
-  line-height: 59px;
   font-size: 20px;
   font-weight: 500;
   text-align: center; }
@@ -52,6 +51,24 @@ body {
     #title-text {
       display: none; } }
 
-@media only screen and (min-width: 768px) {
-  #title-text-small {
-    display: none; } }
+#gene-summary-page {
+  background: #FAFBFC; }
+  #gene-summary-page #gene-summary-page-header {
+    padding-top: 20px; }
+  #gene-summary-page #gene-summary-page-header-text {
+    font-weight: bold;
+    font-size: large;
+    margin-top: 5px; }
+  #gene-summary-page #gene-summary-plots {
+    margin-top: 25px; }
+  #gene-summary-page #gene-summary-legend #gene-summary-legend-title {
+    font-weight: bold; }
+  #gene-summary-page #gene-summary-legend ul {
+    list-style-type: none; }
+
+.gene-summary-plot {
+  margin-bottom: 20px; }
+  .gene-summary-plot .dataset-name {
+    font-weight: bold; }
+  .gene-summary-plot .tis-name {
+    font-style: italic; }
