@@ -11,6 +11,7 @@ import createHistory from 'history/createBrowserHistory';
 import { Route, Switch, Router } from 'react-router-dom';
 import ErrorBoundaryContainer from './components/Error/ErrorBoundaryContainer';
 import Oops from './components/Error/Oops';
+import GeneSummaryPageContainer from "./components/GeneSummary/GeneSummaryPageContainer";
 import LandingPage from './components/Landing/LandingPage';
 
 const cacheStore = window.sessionStorage.getItem('redux-store');
@@ -59,7 +60,8 @@ class App extends Component {
 	            <NavBar />
 	            	<Switch>
 	            		<Route exact path={process.env.PUBLIC_URL} component={LandingPage} store={store} />
-	            		<Route exact path={process.env.PUBLIC_URL + "/oops"} component={Oops} />
+                        <Route exact path={process.env.PUBLIC_URL + "/gene-summary"} component={GeneSummaryPageContainer} />
+                        <Route exact path={process.env.PUBLIC_URL + "/oops"} component={Oops} />
 	            	</Switch>
 	            <NavFooter />
             </ErrorBoundaryContainer>

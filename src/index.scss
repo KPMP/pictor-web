@@ -14,3 +14,46 @@
 		display: none;
 	}
 }
+
+#gene-summary-page {
+
+	background: #FAFBFC;
+
+	#gene-summary-page-header {
+		padding-top: 20px;
+	}
+
+	#gene-summary-page-header-text {
+		font-weight: bold;
+		font-size: large;
+		margin-top: 5px;
+	}
+
+	#gene-summary-plots {
+		margin-top: 25px;
+	}
+
+	#gene-summary-legend {
+
+		#gene-summary-legend-title {
+			font-weight: bold;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+	}
+}
+
+.gene-summary-plot {
+
+	margin-bottom: 20px;
+
+	.dataset-name {
+		font-weight: bold;
+	}
+
+	.tis-name {
+		font-style: italic;
+	}
+}
