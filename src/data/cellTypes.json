@@ -1,0 +1,17 @@
+{
+	"cellTypes": [
+		{"name": "Endothelial", "sortOrder": 0, 
+			"children":[{ "name": "Glomerular endothelial", "legendNumber": 0}, 
+				{ "name": "Ascending vasa recta", "legendNumber": 1}, {"name": "Descending vasa recta", "legendNumber": 2}]},
+		{"name": "Glomerular", "sortOrder": 1, "children": [{"name": "Mesangial cell", "legendNumber": 3}, {"name": "Podocyte", "legendNumber": 4}]},
+		{"name": "Immune", "sortOrder": 2, "children": [{"name":"Macrophage", "legendNumber": 5}, {"name": "Monocyte", "legendNumber": 6}, 
+			{"name": "T cells", "legendNumber": 7 }]},
+		{"name": "Interstitum/Fibroblasts", "sortOrder": 3, "children": [{"name": "Interstitum/Fibroblasts", "legendNumber": 8}]},
+		{"name": "Vascular", "sortOrder": 4, "children": [{"name":"Vascular smooth muscle cells/pericytes", "legendNumber": 9}]},
+		{"name": "Tubular", "sortOrder": 5, "children": [{"name":"Connecting tubule", "legendNumber": 10},
+			{"name": "Descending loop of Henle", "legendNumber": 11}, {"name":"Distal tubule", "legendNumber": 12},
+			{"name":"Intercalated cells", "legendNumber": 13}, {"name":"Principal cells", "legendNumber":14},
+			{"name": "Proximal tubule", "legendNumber": 15}, {"name":"Thick ascending loop of Henle", "legendNumber": 16}, 
+			{"name":"Thin ascending loop of Henle", "legendNumber": 17}]}
+	]
+}
