@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 src/*.css
+.idea
+
+# Ignore generated data folder
+src/data/generate/dst
+src/data/generate/node_modules
