@@ -60,7 +60,7 @@ class App extends Component {
 	            <NavBar />
 	            	<Switch>
 	            		<Route exact path={process.env.PUBLIC_URL} component={LandingPage} store={store} />
-                        <Route exact path={process.env.PUBLIC_URL + "/gene-summary"} component={GeneSummaryPageContainer} />
+                        <Route exact path={process.env.PUBLIC_URL + "/summary"} component={GeneSummaryPageContainer} />
                         <Route exact path={process.env.PUBLIC_URL + "/oops"} component={Oops} />
 	            	</Switch>
 	            <NavFooter />

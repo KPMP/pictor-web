@@ -3,7 +3,7 @@ import GeneSummaryPage from './GeneSummaryPage';
 
 const mapStateToProps = (state, props) =>
     ({
-        geneSymbol: "EGF"
+        geneSymbol: state.selectedGene
     });
 
 const mapDispatchToProps = (dispatch, props) =>

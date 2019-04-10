@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Container, Row, Col, Card, CardBody, Button } from 'reactstrap';
 import { AutoComplete, Form } from 'antd';
 import genes from '../../data/genes';
+import { setSelectedGene } from '../../actions/Gene/geneActions'
+import { withRouter } from "react-router-dom";
 
 class LandingPage extends Component {
 	
@@ -13,7 +16,8 @@ class LandingPage extends Component {
 			dataSource : [],
 			validateStatus: "success",
 			help: "",
-			geneList: geneList
+			geneList: geneList,
+			geneSymbol: ""
 		}
 	}
 	
@@ -30,6 +34,15 @@ class LandingPage extends Component {
 			this.setState({dataSource: limitedList.slice(0,10)})
 		}
 	}
+
+	handleSelect = (value) => {
+		this.setState({geneSymbol: value});
+	}
+
+	handleSubmit = (e) => {
+		this.props.dispatch(setSelectedGene(this.state.geneSymbol));
+		this.props.dispatch(() => this.props.history.push("summary"));
+	}
 	
 	render() {
 		
@@ -42,9 +55,9 @@ class LandingPage extends Component {
 								<h5>Search by gene</h5>
 								<Form>
 									<Form.Item validateStatus={this.state.validateStatus} help={this.state.help}>
-										<AutoComplete style={{"width": "200px"}}dataSource={this.state.dataSource} className="pr-3"
-											onSearch={this.handleSearch}/>
-										<Button color="primary">Search</Button>
+										<AutoComplete style={{"width": "200px"}} dataSource={this.state.dataSource} className="pr-3"
+											onSearch={this.handleSearch} onSelect={this.handleSelect} name="geneSymbol"/>
+										<Button color="primary" onClick={this.handleSubmit}>Search</Button>
 									</Form.Item>
 								</Form>
 							</CardBody>
@@ -56,4 +69,6 @@ class LandingPage extends Component {
 	}
 }
 
-export default LandingPage;
+const WrappedLandingPage = Form.create({ name: 'universalHeader', validateMessage: "Required" })(LandingPage);
+
+export default withRouter(connect()(WrappedLandingPage));
