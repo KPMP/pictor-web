@@ -1,6 +1,6 @@
 const fs = require('fs');
 const util = require('util');
-const seedrandom = require('seedrandom');
+const seedrandom = require('seedrandom'); // https://github.com/davidbau/seedrandom
 const rng = seedrandom('seed1');
 const mkdirAsync = util.promisify(fs.mkdir);
 const writeFileAsync = util.promisify(fs.writeFile);
