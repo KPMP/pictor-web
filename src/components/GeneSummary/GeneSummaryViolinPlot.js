@@ -33,10 +33,7 @@ class GeneSummaryViolinPlot extends Component
 	      y: this.unpack(rawData, 'readcount'),
 	      points: 'none',
 	      box: {
-	        visible: true
-	      },
-	      line: {
-	        color: 'green',
+	        visible: false
 	      },
 	      meanline: {
 	        visible: true
@@ -44,7 +41,8 @@ class GeneSummaryViolinPlot extends Component
 	      transforms: [{
 	        type: 'groupby',
 	        groups: this.unpack(rawData, 'cluster')
-	      }]
+	      }],
+	      colorscale: 'Jet'
 	    }];
 	    this.setState({violinData: violinData})
 	}
