@@ -13,7 +13,7 @@ class GeneSummaryViolinPlot extends Component
 	}
 	
 	componentWillMount() {
-		Papa.parse("data/A/AAAS/SCRNA-SEQ_violinPlot.csv", {
+		Papa.parse("data/N/NPHS2/SCRNA-SEQ_violinPlot.csv", {
 			download: true,
 			header: true,
 			complete: (results) => { this.setViolinData(results)}
@@ -25,13 +25,15 @@ class GeneSummaryViolinPlot extends Component
 	}
 	
 	setViolinData = (results) => {
-		console.log(results)
 	    let rawData = results.data;
 	    var violinData = [{
 	      type: 'violin',
 	      x: this.unpack(rawData, 'cluster'),
 	      y: this.unpack(rawData, 'readcount'),
 	      points: 'none',
+	      autosize: false,
+	      width: 1,
+	      height: 450,
 	      box: {
 	        visible: false
 	      },
@@ -50,11 +52,11 @@ class GeneSummaryViolinPlot extends Component
 	
     render() {
         let violinLayout = {
-	      title: "Multiple Traces Violin Plot",
 	      yaxis: {
 	        zeroline: false
 	      }
-	    }
+	    };
+        let config = { scrollZoom: true, editable: false, staticPlot: true, displayModeBar: true }
         
         return (
             <Card className="gene-summary-plot">
@@ -62,7 +64,7 @@ class GeneSummaryViolinPlot extends Component
                     <div className="dataset-info float-left"><span className="dataset-name">{this.props.datasetName}</span>&nbsp;<span className="tis-name">{this.props.tisName}</span></div>
                 </CardHeader>
                 <CardBody>
-                    <Plot data={this.state.violinData} layout={violinLayout} />
+                    <Plot data={this.state.violinData} layout={violinLayout} config={config}/>
                 </CardBody>
             </Card>
         )
