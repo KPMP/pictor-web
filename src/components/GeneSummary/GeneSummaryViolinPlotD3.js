@@ -9,7 +9,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		
 		var margin = {top: 10, right: 30, bottom: 30, left: 30},
 		    width = 900 - margin.left - margin.right,
-		    height = 500 - margin.top - margin.bottom;
+		    height = 200 - margin.top - margin.bottom;
 
 		let id = "#" + this.props.datasetName;
 		var svg = d3.select(id)
@@ -19,9 +19,9 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  .append("g")
 		  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+		let filename = this.props.datasetName + "_violinPlot.csv";
 		
-		
-		d3.csv("data/N/NPHS2/NPHS2_1.csv", function(data) {
+		d3.csv("data/N/NPHS2/" + filename, function(data) {
 			
 			var y = d3.scaleLinear()
 		    	.domain([0,5])          // Note that here the Y scale is set manually
@@ -55,9 +55,10 @@ class GeneSummaryViolinPlotD3 extends Component {
 	        	})
 	        	.entries(data);
 
+	        let maxWidth = width/30;
 	        var xNum = d3.scaleLinear()
 		    	.range([0, x.bandwidth()])
-		    	.domain([-x.bandwidth(),x.bandwidth()]);
+		    	.domain([-maxWidth,maxWidth]);
 
 		  // Add the shape to this svg!
 	        svg.selectAll("myViolin")
@@ -70,8 +71,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 		        .style("stroke", "none")
 		        .style("fill", "#69b3a2")
 		        .attr("d", d3.area()
-		            .x0(d => xNum(-(d.length/30)) )
-		            .x1(d => xNum(d.length/30) )
+		            .x0(d => xNum(-(d.length/10)) )
+		            .x1(d => xNum(d.length/10) )
 		            .y(d => y(d.x0))
 		            .curve(d3.curveCatmullRom)    
 		        );
