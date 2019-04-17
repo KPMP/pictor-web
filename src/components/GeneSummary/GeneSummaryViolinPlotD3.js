@@ -26,6 +26,13 @@ class GeneSummaryViolinPlotD3 extends Component {
 		let path = "data/" + initialLetter + "/" + geneDirectory + "/" + filename;
 		d3.csv(path, function(data) {
 			
+			let domain = [];
+			data.forEach(function(row) {
+				if (!domain.includes(row.cluster)) {
+					domain.push(row.cluster);
+				}
+			});
+			
 			var y = d3.scaleLinear()
 		    	.domain([0,5])          // Note that here the Y scale is set manually
 		    	.range([height, 0]);
@@ -35,7 +42,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  // Build and Show the X scale. It is a band scale like for a boxplot: each group has an dedicated RANGE on the axis. This range has a length of x.bandwidth
 			var x = d3.scaleBand()
 		    	.range([ 0, width ])
-		    	.domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29])
+		    	.domain(domain.sort(function(a,b) { return a - b;}))
 		    	.padding(0);     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
 			
 			svg.append("g")
