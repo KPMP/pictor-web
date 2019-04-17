@@ -20,8 +20,11 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 		let filename = this.props.datasetName + "_violinPlot.csv";
+		let initialLetter = this.props.selectedGene.charAt(0).toUpperCase();
+		let geneDirectory = this.props.selectedGene.toUpperCase();
 		
-		d3.csv("data/N/NPHS2/" + filename, function(data) {
+		let path = "data/" + initialLetter + "/" + geneDirectory + "/" + filename;
+		d3.csv(path, function(data) {
 			
 			var y = d3.scaleLinear()
 		    	.domain([0,5])          // Note that here the Y scale is set manually

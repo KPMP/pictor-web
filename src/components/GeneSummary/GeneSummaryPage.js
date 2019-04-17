@@ -3,12 +3,14 @@ import { Button, Card, Row, CardBody, Col, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import GeneSummaryViolinPlotD3 from './GeneSummaryViolinPlotD3';
+import GeneSearchForm from "../GeneSearch/GeneSearchForm";
 
 class GeneSummaryPage extends Component {
 
     render() {
         return (
             <Container id="gene-summary-page">
+                <GeneSearchForm initialValue={this.props.geneSymbol}/>
                 <Row id="gene-summary-page-header">
                     <Col xs="12" sm="8">
                         <div>
@@ -19,10 +21,10 @@ class GeneSummaryPage extends Component {
                 </Row>
                 <Row id="gene-summary-plots">
                     <Col xs="12" sm="10">
-                        <GeneSummaryViolinPlotD3 datasetName={"MDSCRNA-SEQ"} tisName={"(UCSF/Stanford)"}/>
-                        <GeneSummaryViolinPlotD3 datasetName={"SCRNA-SEQ"} tisName={"(Michigan/Broad/Princeton)"}/>
-                        <GeneSummaryViolinPlotD3 datasetName={"SNDROP-SEQ"} tisName={"(UCSD/WashU)"}/>
-                        <GeneSummaryViolinPlotD3 datasetName={"LMD"} tisName={"(IU/OSU)"}/>
+                        <GeneSummaryViolinPlotD3 datasetName={"MDSCRNA-SEQ"} tisName={"(UCSF/Stanford)"} selectedGene={this.props.geneSymbol}/>
+                        <GeneSummaryViolinPlotD3 datasetName={"SCRNA-SEQ"} tisName={"(Michigan/Broad/Princeton)"} selectedGene={this.props.geneSymbol}/>
+                        <GeneSummaryViolinPlotD3 datasetName={"SNDROP-SEQ"} tisName={"(UCSD/WashU)"} selectedGene={this.props.geneSymbol}/>
+                        <GeneSummaryViolinPlotD3 datasetName={"LMD"} tisName={"(IU/OSU)"} selectedGene={this.props.geneSymbol}/>
                     </Col>
                     <Col xs="12" sm="2">
                         <Card id="gene-summary-legend">
