@@ -13,7 +13,7 @@ class GeneSummaryViolinPlot extends Component
 	}
 	
 	componentWillMount() {
-		Papa.parse("data/N/NPHS2/SCRNA-SEQ_violinPlot.csv", {
+		Papa.parse("data/N/NPHS2/NPHS2_1.csv", {
 			download: true,
 			header: true,
 			complete: (results) => { this.setViolinData(results)}
@@ -27,36 +27,39 @@ class GeneSummaryViolinPlot extends Component
 	setViolinData = (results) => {
 	    let rawData = results.data;
 	    var violinData = [{
-	      type: 'violin',
-	      x: this.unpack(rawData, 'cluster'),
-	      y: this.unpack(rawData, 'readcount'),
-	      points: 'none',
-	      autosize: false,
-	      width: 1,
-	      height: 450,
-	      box: {
-	        visible: false
-	      },
-	      meanline: {
-	        visible: true
-	      },
-	      transforms: [{
-	        type: 'groupby',
-	        groups: this.unpack(rawData, 'cluster')
-	      }],
-	      colorscale: 'Jet'
-	    }];
+	        type: 'violin',
+	        x: this.unpack(rawData, 'cluster'),
+	        y: this.unpack(rawData, 'readcount'),
+	        points: 'none',
+	        box: {
+	          visible: false
+	        },
+	        meanline: {
+	          visible: false
+	        },
+	        transforms: [{
+	          type: 'groupby',
+	          groups: this.unpack(rawData, 'cluster'),
+	        }],
+	        colorscale: 'Jet'	        
+	      }];
 	    this.setState({violinData: violinData})
 	}
 	
 	
     render() {
+    	var margin = {top: 10, right: 30, bottom: 30, left: 30};
+    	var width = 900 - margin.right - margin.left;
+    	var height = 600 - margin.top - margin.bottom;
         let violinLayout = {
 	      yaxis: {
 	        zeroline: false
-	      }
+	      },
+	      hovermode: false,
+	      showlegend: false,
+	      width: width,
+	      height: height
 	    };
-        let config = { scrollZoom: true, editable: false, staticPlot: true, displayModeBar: true }
         
         return (
             <Card className="gene-summary-plot">
@@ -64,7 +67,7 @@ class GeneSummaryViolinPlot extends Component
                     <div className="dataset-info float-left"><span className="dataset-name">{this.props.datasetName}</span>&nbsp;<span className="tis-name">{this.props.tisName}</span></div>
                 </CardHeader>
                 <CardBody>
-                    <Plot data={this.state.violinData} layout={violinLayout} config={config}/>
+                    <Plot data={this.state.violinData} layout={violinLayout} />
                 </CardBody>
             </Card>
         )

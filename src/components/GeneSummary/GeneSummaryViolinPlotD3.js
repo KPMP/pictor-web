@@ -8,12 +8,13 @@ class GeneSummaryViolinPlotD3 extends Component {
 	componentDidMount() {
 		
 		// set the dimensions and margins of the graph
-		var margin = {top: 10, right: 30, bottom: 30, left: 40},
-		    width = 460 - margin.left - margin.right,
-		    height = 400 - margin.top - margin.bottom;
+		var margin = {top: 10, right: 30, bottom: 30, left: 30},
+		    width = 900 - margin.left - margin.right,
+		    height = 600 - margin.top - margin.bottom;
 
 		// append the svg object to the body of the page
-		var svg = d3.select("#my_dataviz")
+		let id = "#" + this.props.datasetName;
+		var svg = d3.select(id)
 		  .append("svg")
 		    .attr("width", width + margin.left + margin.right)
 		    .attr("height", height + margin.top + margin.bottom)
@@ -22,10 +23,10 @@ class GeneSummaryViolinPlotD3 extends Component {
 		          "translate(" + margin.left + "," + margin.top + ")");
 
 		// Read the data and compute summary statistics for each specie
-		d3.csv("data/N/NPHS2/SCRNA-SEQ_violinPlot.csv", function(data) {
+		d3.csv("data/N/NPHS2/NPHS2_1.csv", function(data) {
 		  // Build and Show the Y scale
 		  var y = d3.scaleLinear()
-		    .domain([ 0,5 ])          // Note that here the Y scale is set manually
+		    .domain([ 0,4.6 ])          // Note that here the Y scale is set manually
 		    .range([height, 0])
 		  svg.append("g").call( d3.axisLeft(y) )
 
@@ -33,7 +34,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  var x = d3.scaleBand()
 		    .range([ 0, width ])
 		    .domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30])
-		    .padding(0.05)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
+		    .padding(0.5)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
 		  svg.append("g")
 		    .attr("transform", "translate(0," + height + ")")
 		    .call(d3.axisBottom(x))
@@ -41,7 +42,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  // Features of the histogram
 		  var histogram = d3.histogram()
 		        .domain(y.domain())
-		        .thresholds(y.ticks(20))    // Important: how many bins approx are going to be made? It is the 'resolution' of the violin plot
+		        .thresholds(y.ticks(10))    // Important: how many bins approx are going to be made? It is the 'resolution' of the violin plot
 		        .value(d => d)
 
 		  // Compute the binning for each group of the dataset
@@ -96,7 +97,7 @@ class GeneSummaryViolinPlotD3 extends Component {
                     <div className="dataset-info float-left"><span className="dataset-name">{this.props.datasetName}</span>&nbsp;<span className="tis-name">{this.props.tisName}</span></div>
                 </CardHeader>
                 <CardBody>
-                   	<div id="my_dataviz"></div>
+                   	<div id={this.props.datasetName}></div>
                 </CardBody>
             </Card>
 		);

@@ -19,20 +19,20 @@ class GeneSummaryPage extends Component {
                     </Col>
                 </Row>
                 <Row id="gene-summary-plots">
-                    <Col xs="12" sm="8">
+                    <Col xs="12" sm="10">
                         <GeneSummaryViolinPlotD3 datasetName={"MDSCRNA-SEQ"} tisName={"(UCSF/Stanford)"}/>
                         <GeneSummaryViolinPlotD3 datasetName={"SCRNA-SEQ"} tisName={"(Michigan/Broad/Princeton)"}/>
                         <GeneSummaryViolinPlotD3 datasetName={"SNDROP-SEQ"} tisName={"(UCSD/WashU)"}/>
                         <GeneSummaryViolinPlotD3 datasetName={"LMD"} tisName={"(IU/OSU)"}/>
                     </Col>
-                    <Col xs="12" sm="4">
+                    <Col xs="12" sm="2">
                         <Card id="gene-summary-legend">
                             <CardBody>
-                                    <span id="gene-summary-legend-title">Legend</span>
-                                    <ul>
-                                        <li>0: PEC</li>
-                                        <li>1: POD</li>
-                                    </ul>
+                                <span id="gene-summary-legend-title">Legend</span>
+	                                <ol>
+	                                    <li>PEC</li>
+	                                    <li>POD</li>
+	                                </ol>
                             </CardBody>
                         </Card>
                     </Col>
