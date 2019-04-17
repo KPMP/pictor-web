@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import * as d3 from 'd3';
+import ReactDOM from 'react-dom';
 
 class GeneSummaryViolinPlotD3 extends Component {
 	
-	componentDidMount() {
+	componentDidUpdate() {
+		
+		let id = "#" + this.props.datasetName;
+		
+		let dom = ReactDOM.findDOMNode(this);
+		if (dom instanceof HTMLElement) {
+			let displayContainer = dom.querySelector(id);
+			let existingSVG = displayContainer.querySelector("svg");
+			if (existingSVG !== null) {
+				existingSVG.parentNode.removeChild(existingSVG);
+			}
+		}
 		
 		var margin = {top: 10, right: 30, bottom: 30, left: 30},
 		    width = 900 - margin.left - margin.right,
 		    height = 200 - margin.top - margin.bottom;
 
-		let id = "#" + this.props.datasetName;
 		var svg = d3.select(id)
 		  .append("svg")
 		  .attr("width", width + margin.left + margin.right)
@@ -26,36 +36,35 @@ class GeneSummaryViolinPlotD3 extends Component {
 		let path = "data/" + initialLetter + "/" + geneDirectory + "/" + filename;
 		d3.csv(path, function(data) {
 			
-			let domain = [];
+			let xDomain = [];
 			data.forEach(function(row) {
-				if (!domain.includes(row.cluster)) {
-					domain.push(row.cluster);
+				if (!xDomain.includes(row.cluster)) {
+					xDomain.push(row.cluster);
 				}
 			});
 			
 			var y = d3.scaleLinear()
-		    	.domain([0,5])          // Note that here the Y scale is set manually
+		    	.domain([0,5])
 		    	.range([height, 0]);
 			
 			svg.append("g").call( d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")) );
 
-		  // Build and Show the X scale. It is a band scale like for a boxplot: each group has an dedicated RANGE on the axis. This range has a length of x.bandwidth
 			var x = d3.scaleBand()
 		    	.range([ 0, width ])
-		    	.domain(domain.sort(function(a,b) { return a - b;}))
-		    	.padding(0);     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
+		    	.domain(xDomain.sort(function(a,b) { return a - b;}))
+		    	.padding(0.25);
 			
 			svg.append("g")
 		    	.attr("transform", "translate(0," + height + ")")
 		    	.call(d3.axisBottom(x));
 		   
-		  // Features of the histogram
+			// thresholds determines how to "bin" the data along the y-axis.  The numbers define the upper limit of values in that bin
+			// note that we have defined a very small first bin so that all of our 0 values will fall into it.
 			var histogram = d3.histogram()
 		    	.domain(y.domain())
-		        .thresholds([0.1,1,2,3,4,5])    // Important: how many bins approx are going to be made? It is the 'resolution' of the violin plot
+		        .thresholds([0.1,1,2,3,4,5])  
 		        .value(d => d);
 
-		  // Compute the binning for each group of the dataset
 	        var sumstat = d3.nest() 
 	        	.key(function(d) { return d.cluster;})
 	        	.rollup(function(d) {  
@@ -70,14 +79,13 @@ class GeneSummaryViolinPlotD3 extends Component {
 		    	.range([0, x.bandwidth()])
 		    	.domain([-maxWidth,maxWidth]);
 
-		  // Add the shape to this svg!
 	        svg.selectAll("myViolin")
 		    	.data(sumstat)
-		    	.enter()        // So now we are working group per group
+		    	.enter()        
 		    	.append("g")
-		    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) // Translation on the right to be at the group position
+		    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
 		    	.append("path")
-		        .datum(function(d){ return(d.value)})     // So now we are working bin per bin
+		        .datum(function(d){ return(d.value)})     
 		        .style("stroke", "none")
 		        .style("fill", "#69b3a2")
 		        .attr("d", d3.area()
