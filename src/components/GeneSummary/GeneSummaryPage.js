@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, Card, Row, CardBody, Col, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import GeneSummaryViolinPlot from './GeneSummaryViolinPlot';
 import GeneSummaryViolinPlotD3 from './GeneSummaryViolinPlotD3';
 
 class GeneSummaryPage extends Component {
