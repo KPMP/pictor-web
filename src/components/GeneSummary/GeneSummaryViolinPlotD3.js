@@ -33,8 +33,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  // Build and Show the X scale. It is a band scale like for a boxplot: each group has an dedicated RANGE on the axis. This range has a length of x.bandwidth
 		  var x = d3.scaleBand()
 		    .range([ 0, width ])
-		    .domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30])
-		    .padding(0.5)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
+		    .domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29])
+		    .padding(0.25)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
 		  svg.append("g")
 		    .attr("transform", "translate(0," + height + ")")
 		    .call(d3.axisBottom(x))
@@ -42,7 +42,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  // Features of the histogram
 		  var histogram = d3.histogram()
 		        .domain(y.domain())
-		        .thresholds(y.ticks(10))    // Important: how many bins approx are going to be made? It is the 'resolution' of the violin plot
+		        .thresholds(y.ticks(5))    // Important: how many bins approx are going to be made? It is the 'resolution' of the violin plot
 		        .value(d => d)
 
 		  // Compute the binning for each group of the dataset
