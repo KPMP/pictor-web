@@ -3,12 +3,14 @@ import { Button, Card, Row, CardBody, Col, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import GeneSummaryViolinPlot from './GeneSummaryViolinPlot';
+import GeneSearchForm from "../GeneSearch/GeneSearchForm";
 
 class GeneSummaryPage extends Component {
 
     render() {
         return (
             <Container id="gene-summary-page">
+                <GeneSearchForm initialValue={this.props.geneSymbol}/>
                 <Row id="gene-summary-page-header">
                     <Col xs="12" sm="8">
                         <div>
