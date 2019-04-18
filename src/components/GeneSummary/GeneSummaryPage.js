@@ -3,7 +3,6 @@ import { Button, Card, Row, CardBody, Col, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import GeneSummaryViolinPlotContainer from './GeneSummaryViolinPlotContainer';
-import GeneSummaryViolinPlotD3 from './GeneSummaryViolinPlotD3';
 import GeneSearchFormContainer from "../GeneSearch/GeneSearchFormContainer";
 
 class GeneSummaryPage extends Component {
@@ -13,7 +12,7 @@ class GeneSummaryPage extends Component {
             <Container id="gene-summary-page">
                 <GeneSearchFormContainer/>
                 <Row id="gene-summary-page-header">
-                    <Col xs="12" sm="8">
+                    <Col xs="12" sm="12">
                         <div>
                         <span id="gene-summary-page-header-text" className="float-left">{this.props.geneSymbol} expression by cell type across methods</span>
                         <Button className="float-right" color={"primary"}>Download</Button>
@@ -22,10 +21,9 @@ class GeneSummaryPage extends Component {
                 </Row>
                 <Row id="gene-summary-plots">
                     <Col xs="12" sm="10">
-                        <GeneSummaryViolinPlotD3 datasetName={"MDSCRNA-SEQ"} tisName={"(UCSF/Stanford)"} selectedGene={this.props.geneSymbol}/>
-                        <GeneSummaryViolinPlotD3 datasetName={"SCRNA-SEQ"} tisName={"(Michigan/Broad/Princeton)"} selectedGene={this.props.geneSymbol}/>
+                        <GeneSummaryViolinPlotContainer datasetName={"MDSCRNA-SEQ"} tisName={"(UCSF/Stanford)"} selectedGene={this.props.geneSymbol}/>
+                        <GeneSummaryViolinPlotContainer datasetName={"SCRNA-SEQ"} tisName={"(Michigan/Broad/Princeton)"} selectedGene={this.props.geneSymbol}/>
                         <GeneSummaryViolinPlotContainer datasetName={"SNDROP-SEQ"} tisName={"(UCSD/WashU)"} />
-                        <GeneSummaryViolinPlotContainer datasetName={"LMD"} tisName={"(IU/OSU)"} />
                     </Col>
                     <Col xs="12" sm="2">
                         <Card id="gene-summary-legend">

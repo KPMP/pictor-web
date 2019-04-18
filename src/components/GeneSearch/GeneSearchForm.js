@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Card, CardBody, Button } from 'reactstrap';
 import { AutoComplete, Form } from 'antd';
 import genes from '../../data/genes';
-import { setSelectedGene } from '../../actions/Gene/geneActions';
 import { withRouter } from "react-router-dom";
 
 class GeneSearchForm extends Component {
