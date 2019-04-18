@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import GeneSearchForm from '../GeneSearch/GeneSearchForm'
+import GeneSearchFormContainer from '../GeneSearch/GeneSearchFormContainer';
 
 class LandingPage extends Component {
 	
@@ -9,7 +9,7 @@ class LandingPage extends Component {
 			<Container>
 				<Row>
 					<Col xs="12">
-                        <GeneSearchForm />
+                        <GeneSearchFormContainer />
 					</Col>
 				</Row>
 			</Container>

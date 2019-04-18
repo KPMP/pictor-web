@@ -7,6 +7,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 	
 	componentDidUpdate() {
 		
+		console.log("In here for ", this.props.datasetName , " and ", this.props.selectedGene);
+		
 		let id = "#" + this.props.datasetName;
 		
 		let dom = ReactDOM.findDOMNode(this);
