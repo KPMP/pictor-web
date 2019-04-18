@@ -44,10 +44,6 @@ class GeneSearchForm extends Component {
         this.props.dispatch(() => this.props.history.push("summary"));
     }
 
-    componentWillMount() {
-
-    }
-
     render() {
         let { getFieldDecorator } = this.props.form;
         let initialValue = this.props.initialValue ? this.props.initialValue: "";
