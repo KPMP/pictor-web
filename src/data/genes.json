@@ -1,3 +1,3 @@
 {
-	"genes": ["AAAS", "NPHS2","EGFR", "FANCI", "ACTB", "C4A", "BUB1B", "APOL1", "ERBB1", "ERBB2", "IFIT1", "TANK", "ERBB3", "ERGO", "ERR", "ERROR", "EEEE", "EAGLE", "EAGLE2", "EAGLE3"]
+	"genes": ["AAAS", "C10orf107", "5S_rRNA", "bP-2171C21.3", "NPHS2","EGFR", "FANCI", "ACTB", "C4A", "BUB1B", "APOL1", "ERBB1", "ERBB2", "IFIT1", "TANK", "ERBB3", "ERGO", "ERR", "ERROR", "EEEE", "EAGLE", "EAGLE2", "EAGLE3"]
 }
