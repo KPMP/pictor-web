@@ -24,7 +24,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		}
 		
 		var margin = {top: 10, right: 30, bottom: 30, left: 30},
-		    width = 900 - margin.left - margin.right,
+		    width = 1100 - margin.left - margin.right,
 		    height = 200 - margin.top - margin.bottom;
 
 		let filename = this.props.datasetName + "_violinPlot.csv";
@@ -77,21 +77,21 @@ class GeneSummaryViolinPlotD3 extends Component {
 			    	.attr("transform", "translate(0," + height + ")")
 			    	.call(d3.axisBottom(x));
 			   
-				var histogram = d3.histogram()
-			    	.domain(y.domain())
-			    	.thresholds([0.1,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5])
-			        .value(d => d);
 	
 		        var sumstat = d3.nest() 
 		        	.key(function(d) { return d.cluster;})
 		        	.rollup(function(d) {  
 		        		let input = d.map(function(g) { return g.readcount;});
+		        		var histogram = d3.histogram()
+		        			.domain(y.domain())
+		        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
+		        			.value(d => d);
 		        		let bins = histogram(input);
 		        		return(bins);
 		        	})
 		        	.entries(data);
 	
-		        let maxWidth = (width/xDomain.length) - 4;
+		        let maxWidth = (width/xDomain.length);
 		        var xNum = d3.scaleLinear()
 			    	.range([0, x.bandwidth()])
 			    	.domain([-maxWidth,maxWidth]);
@@ -106,8 +106,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 			        .style("stroke", "none")
 			        .style("fill", "#69b3a2")
 			        .attr("d", d3.area()
-			            .x0(d => xNum(-(d.length/(maxWidth))) )
-			            .x1(d => xNum(d.length/(maxWidth)) )
+			            .x0(d => xNum(-(d.length/(maxWidth/2))) )
+			            .x1(d => xNum(d.length/(maxWidth/2)) )
 			            .y(d => y(d.x0))
 			            .curve(d3.curveCatmullRom)    
 			        );
