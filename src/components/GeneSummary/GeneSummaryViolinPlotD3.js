@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import * as d3 from 'd3';
 import ReactDOM from 'react-dom';
+import * as d3ScaleChromatic from 'd3-scale-chromatic'
 
 class GeneSummaryViolinPlotD3 extends Component {
 
@@ -102,9 +103,12 @@ class GeneSummaryViolinPlotD3 extends Component {
 			    	.append("g")
 			    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
 			    	.append("path")
+			    	.style("fill", function(d) {
+			    		console.log(d.key);
+			    		return d3ScaleChromatic.interpolateSpectral(d.key);
+			    	})
 			        .datum(function(d){ return(d.value)})     
-			        .style("stroke", "none")
-			        .style("fill", "#69b3a2")
+			        .style("stroke", "black")
 			        .attr("d", d3.area()
 			            .x0(d => xNum(-(d.length/(maxWidth/2))) )
 			            .x1(d => xNum(d.length/(maxWidth/2)) )
