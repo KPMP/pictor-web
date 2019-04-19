@@ -34,8 +34,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 		  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 		let filename = this.props.datasetName + "_violinPlot.csv";
-		let initialLetter = this.props.selectedGene.charAt(0).toUpperCase();
-		let geneDirectory = this.props.selectedGene.toUpperCase();
+		let initialLetter = this.props.selectedGene.charAt(0);
+		let geneDirectory = this.props.selectedGene;
 		
 		let path = "data/" + initialLetter + "/" + geneDirectory + "/" + filename;
 		d3.csv(path, function(data) {
