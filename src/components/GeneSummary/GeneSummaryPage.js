@@ -6,10 +6,6 @@ import GeneSummaryViolinPlotContainer from './GeneSummaryViolinPlotContainer';
 import GeneSearchFormContainer from "../GeneSearch/GeneSearchFormContainer";
 
 class GeneSummaryPage extends Component {
-	
-	downloadData() {
-		console.log("Here ya go");
-	}
 
     render() {
         return (
@@ -19,7 +15,7 @@ class GeneSummaryPage extends Component {
                     <Col xs="12" sm="12">
                         <div>
                         <span id="gene-summary-page-header-text" className="float-left">{this.props.geneSymbol} expression by cell type across methods</span>
-                        <Button className="float-right" color={"primary"} onClick={this.downloadData}>Download</Button>
+                        <Button className="float-right" color={"primary"}>Download</Button>
                         </div>
                     </Col>
                 </Row>
