@@ -36,8 +36,8 @@ class GeneSummaryPage extends Component {
                 
                 <Row id="gene-summary-plots">
                     <Col xs="12" sm="12">
-                        <GeneSummaryViolinPlotContainer datasetName={"MDSCRNA-SEQ"} tisName={"(UCSF/Stanford)"} selectedGene={this.props.geneSymbol}/>
-                        <GeneSummaryViolinPlotContainer datasetName={"SCRNA-SEQ"} tisName={"(Michigan/Broad/Princeton)"} selectedGene={this.props.geneSymbol}/>
+                        <GeneSummaryViolinPlotContainer datasetName={"MDSCRNA-SEQ"} tisName={"(UCSF/Stanford)"} />
+                        <GeneSummaryViolinPlotContainer datasetName={"SCRNA-SEQ"} tisName={"(Michigan/Broad/Princeton)"} />
                         <GeneSummaryViolinPlotContainer datasetName={"SNDROP-SEQ"} tisName={"(UCSD/WashU)"} />
                     </Col>
                 </Row>
