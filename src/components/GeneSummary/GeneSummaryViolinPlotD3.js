@@ -5,6 +5,10 @@ import ReactDOM from 'react-dom';
 
 class GeneSummaryViolinPlotD3 extends Component {
 	
+	componentDidMount() {
+		this.componentDidUpdate();
+	}
+	
 	componentDidUpdate() {
 		
 		let id = "#" + this.props.datasetName;

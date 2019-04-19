@@ -6,4 +6,5 @@ export const setSelectedGene = (geneSymbol) =>
         type: actionNames.SET_SELECTED_GENE,
         payload: geneSymbol
     }
+    
 }

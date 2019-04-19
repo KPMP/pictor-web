@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Card, CardBody, Button } from 'reactstrap';
 import { AutoComplete, Form } from 'antd';
 import genes from '../../data/genes';
-import { setSelectedGene } from '../../actions/Gene/geneActions'
 import { withRouter } from "react-router-dom";
 
 class GeneSearchForm extends Component {
@@ -19,6 +18,7 @@ class GeneSearchForm extends Component {
             geneList: geneList,
             geneSymbol: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSearch = (value) => {
@@ -39,27 +39,28 @@ class GeneSearchForm extends Component {
         this.setState({geneSymbol: value});
     }
 
-    handleSubmit = (e) => {
-        this.props.dispatch(setSelectedGene(this.state.geneSymbol));
+    handleSubmit(e) {
+        this.props.setSelectedGene(this.state.geneSymbol);
         this.props.dispatch(() => this.props.history.push("summary"));
     }
 
     render() {
         let { getFieldDecorator } = this.props.form;
-        let initialValue = this.props.initialValue ? this.props.initialValue: "";
         return(
-                        <Card className="mt-3">
-                            <CardBody id="search-for-gene">
-                                <h5>Search by gene</h5>
-                                <Form>
-                                    <Form.Item validateStatus={this.state.validateStatus} help={this.state.help}>
-                                        {getFieldDecorator('geneSymbol', { initialValue: initialValue })(<AutoComplete style={{"width": "200px"}} dataSource={this.state.dataSource} className="pr-3"
-                                                      onSearch={this.handleSearch} onSelect={this.handleSelect} name="geneSymbol"/>)}
-                                        <Button color="primary" onClick={this.handleSubmit}>Search</Button>
-                                    </Form.Item>
-                                </Form>
-                            </CardBody>
-                        </Card>
+            <Card className="mt-3">
+                <CardBody id="search-for-gene">
+                    <h5>Search by gene</h5>
+                    <Form>
+                        <Form.Item validateStatus={this.state.validateStatus} help={this.state.help}>
+                            {getFieldDecorator('geneSymbol', { })(
+                            		<AutoComplete style={{"width": "200px"}} dataSource={this.state.dataSource} className="pr-3"
+                                          onSearch={this.handleSearch} onSelect={this.handleSelect} name="geneSymbol"/>
+                            )}
+                            <Button color="primary" onClick={this.handleSubmit}>Search</Button>
+                        </Form.Item>
+                    </Form>
+                </CardBody>
+            </Card>
         );
     }
 }
