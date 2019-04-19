@@ -97,6 +97,9 @@ class GeneSummaryViolinPlotD3 extends Component {
 			    	.range([0, x.bandwidth()])
 			    	.domain([-maxWidth,maxWidth]);
 	
+		        var myColor = d3.scaleSequential().domain([0,xDomain.length])
+		        	.interpolator(d3ScaleChromatic.interpolatePuRd);
+		        
 		        svg.selectAll("myViolin")
 			    	.data(sumstat)
 			    	.enter()        
@@ -104,8 +107,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 			    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
 			    	.append("path")
 			    	.style("fill", function(d) {
-			    		console.log(d.key);
-			    		return d3ScaleChromatic.interpolateSpectral(d.key);
+			    		return myColor(d.key);
 			    	})
 			        .datum(function(d){ return(d.value)})     
 			        .style("stroke", "black")
