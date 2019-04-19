@@ -42,19 +42,19 @@ class GeneSummaryViolinPlotD3 extends Component {
 			});
 
 			if(xDomain.length === 0) {
-				var svg = d3.select(id)
+				let svg = d3.select(id)
 					.append("svg")
 					.attr("width", width + margin.left + margin.right)
 					.attr("height", 20)
 					.append("g");
 				
-				var text = svg.append("text")
+				svg.append("text")
 					.attr('x', 0)
 					.attr('y', 10)
 					.text(noExpressionMessage);
 				
 			} else {
-				var svg = d3.select(id)
+				let svg = d3.select(id)
 					.append("svg")
 					.attr("width", width + margin.left + margin.right)
 					.attr("height", height + margin.top + margin.bottom)
@@ -70,16 +70,15 @@ class GeneSummaryViolinPlotD3 extends Component {
 				var x = d3.scaleBand()
 			    	.range([ 0, width ])
 			    	.domain(xDomain.sort(function(a,b) { return a - b;}))
-			    	.padding(0.25);
+			    	.padding(0.1);
 				
 				svg.append("g")
 			    	.attr("transform", "translate(0," + height + ")")
 			    	.call(d3.axisBottom(x));
 			   
-				// thresholds determines how to "bin" the data along the y-axis.  The numbers define the upper limit of values in that bin
-				// note that we have defined a very small first bin so that all of our 0 values will fall into it.
 				var histogram = d3.histogram()
 			    	.domain(y.domain())
+			    	.thresholds([0.1,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5])
 			        .value(d => d);
 	
 		        var sumstat = d3.nest() 
@@ -91,7 +90,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		        	})
 		        	.entries(data);
 	
-		        let maxWidth = width/30;
+		        let maxWidth = (width/xDomain.length) - 4;
 		        var xNum = d3.scaleLinear()
 			    	.range([0, x.bandwidth()])
 			    	.domain([-maxWidth,maxWidth]);
@@ -106,8 +105,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 			        .style("stroke", "none")
 			        .style("fill", "#69b3a2")
 			        .attr("d", d3.area()
-			            .x0(d => xNum(-(d.length/10)) )
-			            .x1(d => xNum(d.length/10) )
+			            .x0(d => xNum(-(d.length/(maxWidth))) )
+			            .x1(d => xNum(d.length/(maxWidth)) )
 			            .y(d => y(d.x0))
 			            .curve(d3.curveCatmullRom)    
 			        );
