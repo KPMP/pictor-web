@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import * as d3 from 'd3';
 import ReactDOM from 'react-dom';
+import * as d3ScaleChromatic from 'd3-scale-chromatic'
 import Api from '../../helpers/Api';
 
 class GeneSummaryViolinPlotD3 extends Component {
@@ -73,37 +74,41 @@ class GeneSummaryViolinPlotD3 extends Component {
 			    	.attr("transform", "translate(0," + height + ")")
 			    	.call(d3.axisBottom(x));
 			   
-				var histogram = d3.histogram()
-			    	.domain(y.domain())
-			    	.thresholds([0.1,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5])
-			        .value(d => d);
 	
 		        var sumstat = d3.nest() 
 		        	.key(function(d) { return d.cluster;})
 		        	.rollup(function(d) {  
 		        		let input = d.map(function(g) { return g.readcount;});
+		        		var histogram = d3.histogram()
+		        			.domain(y.domain())
+		        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
+		        			.value(d => d);
 		        		let bins = histogram(input);
 		        		return(bins);
 		        	})
 		        	.entries(data);
 	
-		        let maxWidth = (width/xDomain.length) - 4;
+		        let maxWidth = (width/xDomain.length);
 		        var xNum = d3.scaleLinear()
 			    	.range([0, x.bandwidth()])
 			    	.domain([-maxWidth,maxWidth]);
 	
+		        var myColor = d3.scaleOrdinal().domain([0,xDomain.length]).range(d3ScaleChromatic.schemeSet3);
+		        
 		        svg.selectAll("myViolin")
 			    	.data(sumstat)
 			    	.enter()        
 			    	.append("g")
 			    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
 			    	.append("path")
+			    	.style("fill", function(d) {
+			    		return myColor(d.key);
+			    	})
 			        .datum(function(d){ return(d.value)})     
-			        .style("stroke", "none")
-			        .style("fill", "#69b3a2")
+			        .style("stroke", "black")
 			        .attr("d", d3.area()
-			            .x0(d => xNum(-(d.length/(maxWidth))) )
-			            .x1(d => xNum(d.length/(maxWidth)) )
+			            .x0(d => xNum(-(d.length/(maxWidth/2))) )
+			            .x1(d => xNum(d.length/(maxWidth/2)) )
 			            .y(d => y(d.x0))
 			            .curve(d3.curveCatmullRom)    
 			        );

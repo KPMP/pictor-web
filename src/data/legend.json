@@ -1,0 +1,277 @@
+{
+    "masterClusters": {
+        "1": {
+            "structure": "Glomerulus",
+            "cellType": "Test Glom A",
+            "masterClusterId": "1"
+        },
+        "2": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "3": {
+            "structure": "Vessels",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "4": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "5": {
+            "structure": "Glomerulus",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "6": {
+            "structure": "Glomerulus",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "7": {
+            "structure": "Glomerulus",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "8": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "9": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "10": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "11": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "12": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "13": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "14": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "15": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "16": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "17": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "18": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "19": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "20": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "21": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "22": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "23": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "24": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "25": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "26": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "27": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "28": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "29": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "30": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "31": {
+            "structure": "Tubules",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "32": {
+            "structure": "Vessels",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "33": {
+            "structure": "Vessels",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "34": {
+            "structure": "Vessels",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "35": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "36": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "37": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "38": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "39": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "40": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "41": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "42": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "43": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "44": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "45": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "46": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        },
+        "47": {
+            "structure": "Interstitium",
+            "cellType": "Test EC B",
+            "masterClusterId": "2"
+        }
+   	},
+    "datasetClusters": {
+        "SCRNA_SEQ": {
+            "24": {
+                "structure": "Test Endothelial",
+                "cellType": "Test EC B",
+                "masterClusterId": "2"
+            },
+            "25": {
+                "structure": "Test Glomerulus",
+                "cellType": "Test Glom A",
+                "masterClusterId": "1"
+            }
+        },
+        "MDSCRNA_SEQ": {
+            "19": {
+                "structure": "Test Endothelial",
+                "cellType": "Test EC B",
+                "masterClusterId": "2"
+            },
+            "20": {
+                "structure": "Test Glomerulus",
+                "cellType": "Test Glom A",
+                "masterClusterId": "1"
+            }
+        },
+        "SNDROP_SEQ": {
+            "1": {
+                "structure": "Test Endothelial",
+                "cellType": "Test EC B",
+                "masterClusterId": "2"
+            },
+            "2": {
+                "structure": "Test Glomerulus",
+                "cellType": "Test Glom A",
+                "masterClusterId": "1"
+            }
+        }
+    }
+}
