@@ -26,7 +26,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		}
 		
 		let margin = {top: 10, right: 30, bottom: 30, left: 30};
-		let width = 900 - margin.left - margin.right;
+		let width = 1100 - margin.left - margin.right;
 		let height = 200 - margin.top - margin.bottom;
 		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
 		
@@ -67,7 +67,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 	
 				var x = d3.scaleBand()
 			    	.range([ 0, width ])
-			    	.domain(xDomain.sort(function(a,b) { return a - b;}))
+			    	.domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47])
 			    	.padding(0.1);
 				
 				svg.append("g")
