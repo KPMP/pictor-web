@@ -25,7 +25,7 @@ export default class Api {
 
         dd = dd < 10 ? "0" + dd : dd;
         mm = mm < 10 ? "0" + mm : mm;
-
+        
         return `${gene}_expression_${yyyy}${mm}${dd}.csv`;
     }
 
