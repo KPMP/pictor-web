@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import legend from '../../data/legend';
-import { Row, Col, Container } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 class GeneSummaryLegend extends Component {
 	
