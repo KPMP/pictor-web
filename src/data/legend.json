@@ -10,7 +10,7 @@
             "cellType": "Test EC B",
             "masterClusterId": "2"
         }
-    },
+   	},
     "datasetClusters": {
         "SCRNA_SEQ": {
             "24": {

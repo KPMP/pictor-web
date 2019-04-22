@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Card, Row, CardBody, Col, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-
 import GeneSummaryViolinPlotContainer from './GeneSummaryViolinPlotContainer';
-import GeneSearchFormContainer from "../GeneSearch/GeneSearchFormContainer";
+import GeneSearchFormContainer from '../GeneSearch/GeneSearchFormContainer';
+import GeneSummaryLegend from './GeneSummaryLegend';
 
 class GeneSummaryPage extends Component {
 
@@ -13,9 +13,9 @@ class GeneSummaryPage extends Component {
                 <GeneSearchFormContainer/>
                 <Row id="gene-summary-page-header">
                     <Col xs="12" sm="12">
-                        <div>
-                        <span id="gene-summary-page-header-text" className="float-left">{this.props.geneSymbol} expression by cell type across methods</span>
-                        <Button className="float-right" color={"primary"}>Download</Button>
+                    	<div>
+	                        <span id="gene-summary-page-header-text" className="float-left">{this.props.geneSymbol} expression by cell type across methods</span>
+	                        <Button className="float-right" color={"primary"}>Download</Button>
                         </div>
                     </Col>
                 </Row>
@@ -24,11 +24,7 @@ class GeneSummaryPage extends Component {
 	                <Col xs="12">
 	                	<Card id="gene-summary-legend">
 	                		<CardBody>
-	                			<span id="gene-summary-legend-title">Legend</span>
-	                			<ol>
-	                				<li>PEC</li>
-	                				<li>POD</li>
-	                			</ol>
+	                			<GeneSummaryLegend/>
 	                		</CardBody>
 	                	</Card>
 	                </Col>
