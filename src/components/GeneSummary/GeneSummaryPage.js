@@ -19,16 +19,6 @@ class GeneSummaryPage extends Component {
                         </div>
                     </Col>
                 </Row>
-                <Row>
-
-	                <Col xs="12">
-	                	<Card id="gene-summary-legend">
-	                		<CardBody>
-	                			<GeneSummaryLegend/>
-	                		</CardBody>
-	                	</Card>
-	                </Col>
-	            </Row>
                 
                 <Row id="gene-summary-plots">
                     <Col xs="12" sm="12">
@@ -37,7 +27,15 @@ class GeneSummaryPage extends Component {
                         <GeneSummaryViolinPlotContainer datasetName={"SNDROP-SEQ"} tisName={"(UCSD/WashU)"} />
                     </Col>
                 </Row>
-                
+                <Row id="gene-summary-legend-row">
+	                <Col xs="12">
+		                <Card id="gene-summary-legend">
+			                <CardBody>
+			                	<GeneSummaryLegend/>
+			                </CardBody>
+		                </Card>
+	                </Col>
+                </Row>
             </Container>
         )
     }
