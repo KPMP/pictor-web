@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import * as d3 from 'd3';
 import ReactDOM from 'react-dom';
+import Api from '../../helpers/Api';
 
 class GeneSummaryViolinPlotD3 extends Component {
 
@@ -23,15 +24,10 @@ class GeneSummaryViolinPlotD3 extends Component {
 			}
 		}
 		
-		var margin = {top: 10, right: 30, bottom: 30, left: 30},
-		    width = 900 - margin.left - margin.right,
-		    height = 200 - margin.top - margin.bottom;
-
-		let filename = this.props.datasetName + "_violinPlot.csv";
-		let initialLetter = this.props.selectedGene.charAt(0);
-		let geneDirectory = this.props.selectedGene;
-		
-		let path = "/data/gene-expression/" + initialLetter + "/" + geneDirectory + "/" + filename;
+		let margin = {top: 10, right: 30, bottom: 30, left: 30};
+		let width = 900 - margin.left - margin.right;
+		let height = 200 - margin.top - margin.bottom;
+		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
 		
 		d3.csv(path, function(data) {
 			

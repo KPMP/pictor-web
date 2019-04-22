@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card, Row, CardBody, Col, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+import Api from '../../helpers/Api';
 
 import GeneSummaryViolinPlotContainer from './GeneSummaryViolinPlotContainer';
 import GeneSearchFormContainer from "../GeneSearch/GeneSearchFormContainer";
@@ -15,7 +16,10 @@ class GeneSummaryPage extends Component {
                     <Col xs="12" sm="12">
                         <div>
                         <span id="gene-summary-page-header-text" className="float-left">{this.props.geneSymbol} expression by cell type across methods</span>
-                        <Button className="float-right" color={"primary"}>Download</Button>
+                        <Button tag="a" className="float-right" color="primary"
+                            href={Api.getDownloadReadyViolinPlotPath(this.props.geneSymbol)}
+                            download={Api.getDownloadReadyViolinPlotFilename(this.props.geneSymbol)}
+                            >Download</Button>
                         </div>
                     </Col>
                 </Row>
