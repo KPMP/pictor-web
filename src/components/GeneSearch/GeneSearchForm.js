@@ -4,6 +4,7 @@ import { Card, CardBody, Button } from 'reactstrap';
 import { AutoComplete, Form } from 'antd';
 import genes from '../../data/genes';
 import { withRouter } from "react-router-dom";
+import ReactGA from 'react-ga';
 
 class GeneSearchForm extends Component {
 
@@ -23,7 +24,7 @@ class GeneSearchForm extends Component {
 
     handleSearch = (value) => {
         if (value === "" || value === undefined) {
-            this.setState({dataSource: []})
+            this.setState({dataSource: []});
         } else {
             let limitedList = this.state.geneList.filter(gene => gene.toUpperCase().indexOf(value.toUpperCase()) !== -1);
             if (limitedList.length === 0) {
@@ -31,12 +32,16 @@ class GeneSearchForm extends Component {
             } else {
                 this.setState({validateStatus: "success", help:""})
             }
-            this.setState({dataSource: limitedList.slice(0,10)})
+            this.setState({dataSource: limitedList.slice(0,10)});
         }
     }
 
     handleSelect = (value) => {
         this.setState({geneSymbol: value});
+        ReactGA.event({
+			category: 'Gene Search',
+			action: value
+        });
     }
 
     handleSubmit(e) {
