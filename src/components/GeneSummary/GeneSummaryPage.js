@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card, Row, CardBody, Col, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
-=======
 import Api from '../../helpers/Api';
-
->>>>>>> develop
 import GeneSummaryViolinPlotContainer from './GeneSummaryViolinPlotContainer';
 import GeneSearchFormContainer from '../GeneSearch/GeneSearchFormContainer';
 import GeneSummaryLegend from './GeneSummaryLegend';
