@@ -31,7 +31,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		let initialLetter = this.props.selectedGene.charAt(0);
 		let geneDirectory = this.props.selectedGene;
 		
-		let path = "data/" + initialLetter + "/" + geneDirectory + "/" + filename;
+		let path = "/data/gene-expression/" + initialLetter + "/" + geneDirectory + "/" + filename;
 		
 		d3.csv(path, function(data) {
 			
