@@ -1,5 +1,4 @@
 import axios from 'axios';
-import ReactGA from 'react-ga';
 
 export default class Api {
   static getInstance() {
@@ -26,11 +25,6 @@ export default class Api {
 
         dd = dd < 10 ? "0" + dd : dd;
         mm = mm < 10 ? "0" + mm : mm;
-
-        ReactGA.event({
-			category: 'Download',
-			action: gene
-        });
         
         return `${gene}_expression_${yyyy}${mm}${dd}.csv`;
     }
