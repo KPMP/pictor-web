@@ -22,12 +22,11 @@ class GeneSummaryLegend extends Component {
 	
 	generateLegendForGroup(groupName, legendGroup) {
 		let items = [];
-		console.log(groupName);
-		console.log(legendGroup);
+		for(const item of legendGroup) {
+			items.push(<li>{item.id}: {item.cellType}</li>);
+		}
 		
-//		for(const item of legendGroup) {
-//			items.push(<li>{item.id}: {item.cellType}</li>);
-//		}
+		console.log(items);
 //		if (legendGroup.length > 14) {
 //			
 //			let half = (legendGroup.length / 2) + (legendGroup.length % 2);
