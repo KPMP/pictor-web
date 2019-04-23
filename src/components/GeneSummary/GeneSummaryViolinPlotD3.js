@@ -30,6 +30,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 		let height = 200 - margin.top - margin.bottom;
 		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
 		
+		console.log(path);
+		
 		if (this.props.selectedGene === "") {
 			this.showNoResults(id, width, margin);
 		} else {
