@@ -21,6 +21,21 @@ class GeneSummaryPage extends Component {
         return (
             <Container id="gene-summary-page">
                 <GeneSearchFormContainer/>
+                <Row id="gene-summary-page-header">
+                    <Col xs="12" sm="12">
+                        <div>
+                        <span id="gene-summary-page-header-text" className="float-left">{this.props.geneSymbol} expression by cell type across methods</span>
+                        <span onClick={() => this.trackDownload(this.props.geneSymbol)}>
+	                        <Button tag="a" className="float-right" color="primary"
+	                            href={Api.getDownloadReadyViolinPlotPath(this.props.geneSymbol)}
+	                            download={Api.getDownloadReadyViolinPlotFilename(this.props.geneSymbol)}
+	                            >Download</Button>
+                        </span>
+                        </div>
+                    </Col>
+                </Row>
+                
+                
             </Container>
         )
     }
