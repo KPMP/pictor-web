@@ -30,13 +30,10 @@ class GeneSummaryViolinPlotD3 extends Component {
 		let height = 200 - margin.top - margin.bottom;
 		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
 		
-		console.log(path);
-		
 		if (this.props.selectedGene === "") {
 			this.showNoResults(id, width, margin);
 		} else {
 			d3.csv(path, function(error, data) {
-				console.log(error);
 				if (error && error.target.status === 404) {
 					thisComponent.showNoResults(id, width, margin);
 				} else {
@@ -63,18 +60,18 @@ class GeneSummaryViolinPlotD3 extends Component {
 				    	.call(d3.axisBottom(x));
 				   
 		
-//			        var sumstat = d3.nest() 
-//			        	.key(function(d) { return d.cluster;})
-//			        	.rollup(function(d) {  
-//			        		let input = d.map(function(g) { return g.readcount;});
-//			        		var histogram = d3.histogram()
-//			        			.domain(y.domain())
-//			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
-//			        			.value(d => d);
-//			        		let bins = histogram(input);
-//			        		return(bins);
-//			        	})
-//			        	.entries(data);
+			        var sumstat = d3.nest() 
+			        	.key(function(d) { return d.cluster;})
+			        	.rollup(function(d) {  
+			        		let input = d.map(function(g) { return g.readcount;});
+			        		var histogram = d3.histogram()
+			        			.domain(y.domain())
+			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
+			        			.value(d => d);
+			        		let bins = histogram(input);
+			        		return(bins);
+			        	})
+			        	.entries(data);
 //		
 //			        let maxWidth = (width/47);
 //			        var xNum = d3.scaleLinear()
