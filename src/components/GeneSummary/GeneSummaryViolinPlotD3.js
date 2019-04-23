@@ -13,17 +13,17 @@ class GeneSummaryViolinPlotD3 extends Component {
 	
 	componentDidUpdate() {
 		
-//		let id = "#" + this.props.datasetName;
-//		let noExpressionMessage = "No expression value for gene '" + this.props.selectedGene + "' in this dataset";
-//		
-//		let dom = ReactDOM.findDOMNode(this);
-//		if (dom instanceof HTMLElement) {
-//			let displayContainer = dom.querySelector(id);
-//			let existingSVG = displayContainer.querySelector("svg");
-//			if (existingSVG !== null) {
-//				existingSVG.parentNode.removeChild(existingSVG);
-//			}
-//		}
+		let id = "#" + this.props.datasetName;
+		let noExpressionMessage = "No expression value for gene '" + this.props.selectedGene + "' in this dataset";
+		
+		let dom = ReactDOM.findDOMNode(this);
+		if (dom instanceof HTMLElement) {
+			let displayContainer = dom.querySelector(id);
+			let existingSVG = displayContainer.querySelector("svg");
+			if (existingSVG !== null) {
+				existingSVG.parentNode.removeChild(existingSVG);
+			}
+		}
 //		
 //		let margin = {top: 10, right: 30, bottom: 30, left: 30};
 //		let width = 1100 - margin.left - margin.right;

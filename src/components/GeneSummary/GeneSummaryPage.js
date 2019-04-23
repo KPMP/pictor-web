@@ -46,7 +46,7 @@ class GeneSummaryPage extends Component {
 	                <Col xs="12">
 		                <Card id="gene-summary-legend">
 			                <CardBody>
-			                	<GeneSummaryLegend/>
+			                
 			                </CardBody>
 		                </Card>
 	                </Col>
@@ -55,6 +55,9 @@ class GeneSummaryPage extends Component {
         )
     }
 }
+
+//<GeneSummaryLegend/>
+
 
 GeneSummaryPage.propTypes = {
     geneSymbol: PropTypes.string.isRequired,

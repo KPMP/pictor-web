@@ -60,16 +60,14 @@ class GeneSummaryLegend extends Component {
 		return(
 			<div>
 				<span id="gene-summary-legend-title">Legend</span>
-				
+				<Row>
+					{ groups.map((group) => {
+						return this.generateLegendForGroup(group, legendGroups[group]);
+					})}
+				</Row>
 			</div>
 		)
 	}
 }
-
-//<Row>
-//{ groups.map((group) => {
-//	return this.generateLegendForGroup(group, legendGroups[group]);
-//})}
-//</Row>
 
 export default GeneSummaryLegend;
