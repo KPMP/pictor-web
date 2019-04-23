@@ -17,7 +17,6 @@ class GeneSearchForm extends Component {
             validateStatus: "success",
             help: "",
             geneList: geneList,
-            geneSymbol: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -37,16 +36,18 @@ class GeneSearchForm extends Component {
     }
 
     handleSelect = (value) => {
-        this.setState({geneSymbol: value});
-        this.handleSubmit();
+    	console.log(value);
+    	this.setState({geneSymbol: value});
+    	this.handleSubmit(value);
         ReactGA.event({
 			category: 'Gene Search',
 			action: value
         });
     }
 
-    handleSubmit(e) {
-        this.props.setSelectedGene(this.state.geneSymbol);
+    handleSubmit(value) {
+    	console.log(value);
+        this.props.setSelectedGene(value);
         this.props.dispatch(() => this.props.history.push("summary"));
     }
 
@@ -61,7 +62,7 @@ class GeneSearchForm extends Component {
                             {getFieldDecorator('geneSymbol', { })(
                             		<AutoComplete style={{"width": "200px"}} dataSource={this.state.dataSource} className="pr-3"
                             			onSearch={this.handleSearch} onSelect={this.handleSelect} name="geneSymbol"
-                                        defaultActiveFirstOption={true} backfill={true} defaultValue={this.state.geneSymbol}
+                                        defaultActiveFirstOption={true} backfill={true}
                             		/>
                             )}
                         </Form.Item>
