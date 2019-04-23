@@ -5,6 +5,7 @@ import { Row, Col } from 'reactstrap';
 class GeneSummaryLegend extends Component {
 	
 	generateLegendGroups() {
+		console.log(legend);
 		let legendGroups = {};
 		let clusterIds = Object.keys(legend.masterClusters);
 		for (const clusterId of clusterIds) {
@@ -60,16 +61,14 @@ class GeneSummaryLegend extends Component {
 		return(
 			<div>
 				<span id="gene-summary-legend-title">Legend</span>
-				
+				<Row>
+					{ groups.map((group) => {
+						return this.generateLegendForGroup(group, legendGroups[group]);
+					})}
+				</Row>
 			</div>
 		)
 	}
 }
-
-//<Row>
-//{ groups.map((group) => {
-//	return this.generateLegendForGroup(group, legendGroups[group]);
-//})}
-//</Row>
 
 export default GeneSummaryLegend;
