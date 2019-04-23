@@ -97,7 +97,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 //				            .y(d => y(d.x0))
 //				            .curve(d3.curveCatmullRom)    
 //				        );
-//					}
+					}
 				});
 			}
 	}
