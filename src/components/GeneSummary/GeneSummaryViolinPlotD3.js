@@ -60,44 +60,44 @@ class GeneSummaryViolinPlotD3 extends Component {
 				    	.call(d3.axisBottom(x));
 				   
 		
-			        var sumstat = d3.nest() 
-			        	.key(function(d) { return d.cluster;})
-			        	.rollup(function(d) {  
-			        		let input = d.map(function(g) { return g.readcount;});
-			        		var histogram = d3.histogram()
-			        			.domain(y.domain())
-			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
-			        			.value(d => d);
-			        		let bins = histogram(input);
-			        		return(bins);
-			        	})
-			        	.entries(data);
-		
-			        let maxWidth = (width/47);
-			        var xNum = d3.scaleLinear()
-				    	.range([0, x.bandwidth()])
-				    	.domain([-maxWidth,maxWidth]);
-		
-			        var myColor = d3.scaleOrdinal().domain([1,47]).range(d3ScaleChromatic.schemeSet3);
-			        
-			        svg.selectAll("myViolin")
-				    	.data(sumstat)
-				    	.enter()        
-				    	.append("g")
-				    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
-				    	.append("path")
-				    	.style("fill", function(d) {
-				    		return myColor(d.key);
-				    	})
-				        .datum(function(d){ return(d.value)})     
-				        .style("stroke", "black")
-				        .attr("d", d3.area()
-				            .x0(d => xNum(-(d.length/(maxWidth/2))) )
-				            .x1(d => xNum(d.length/(maxWidth/2)) )
-				            .y(d => y(d.x0))
-				            .curve(d3.curveCatmullRom)    
-				        );
-					}
+//			        var sumstat = d3.nest() 
+//			        	.key(function(d) { return d.cluster;})
+//			        	.rollup(function(d) {  
+//			        		let input = d.map(function(g) { return g.readcount;});
+//			        		var histogram = d3.histogram()
+//			        			.domain(y.domain())
+//			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
+//			        			.value(d => d);
+//			        		let bins = histogram(input);
+//			        		return(bins);
+//			        	})
+//			        	.entries(data);
+//		
+//			        let maxWidth = (width/47);
+//			        var xNum = d3.scaleLinear()
+//				    	.range([0, x.bandwidth()])
+//				    	.domain([-maxWidth,maxWidth]);
+//		
+//			        var myColor = d3.scaleOrdinal().domain([1,47]).range(d3ScaleChromatic.schemeSet3);
+//			        
+//			        svg.selectAll("myViolin")
+//				    	.data(sumstat)
+//				    	.enter()        
+//				    	.append("g")
+//				    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
+//				    	.append("path")
+//				    	.style("fill", function(d) {
+//				    		return myColor(d.key);
+//				    	})
+//				        .datum(function(d){ return(d.value)})     
+//				        .style("stroke", "black")
+//				        .attr("d", d3.area()
+//				            .x0(d => xNum(-(d.length/(maxWidth/2))) )
+//				            .x1(d => xNum(d.length/(maxWidth/2)) )
+//				            .y(d => y(d.x0))
+//				            .curve(d3.curveCatmullRom)    
+//				        );
+//					}
 				});
 			}
 	}
