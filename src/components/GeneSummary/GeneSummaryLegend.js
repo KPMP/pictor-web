@@ -9,11 +9,11 @@ class GeneSummaryLegend extends Component {
 		let clusterIds = Object.keys(legend.masterClusters);
 		for (const clusterId of clusterIds) {
 			let structure = legend.masterClusters[clusterId].structure;
-			console.log(structure);
 			
-//			if (legendGroups.hasOwnProperty(structure)){
-//				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
-//			} else {
+			if (legendGroups.hasOwnProperty(structure)){
+				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
+			}
+//			else {
 //				legendGroups[structure] = [];
 //				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
 //			}
