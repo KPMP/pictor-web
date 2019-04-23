@@ -36,7 +36,6 @@ class GeneSearchForm extends Component {
     }
 
     handleSelect = (value) => {
-    	console.log(value);
     	this.setState({geneSymbol: value});
     	this.handleSubmit(value);
         ReactGA.event({
@@ -46,7 +45,6 @@ class GeneSearchForm extends Component {
     }
 
     handleSubmit(value) {
-    	console.log(value);
         this.props.setSelectedGene(value);
         this.props.dispatch(() => this.props.history.push("summary"));
     }

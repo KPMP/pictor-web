@@ -34,6 +34,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 			this.showNoResults(id, width, margin);
 		} else {
 			d3.csv(path, function(error, data) {
+				console.log(error);
 				if (error && error.target.status === 404) {
 					thisComponent.showNoResults(id, width, margin);
 				} else {
