@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch, props) =>
     ({
     	setSelectedGene(geneSymbol) {
     		dispatch(setSelectedGene(geneSymbol));
+    	},
+    	navigate(page) {
+    		dispatch(this.props.history.push(page));
     	}
     });
 
