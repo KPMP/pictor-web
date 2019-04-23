@@ -46,7 +46,7 @@ class GeneSummaryPage extends Component {
 	                <Col xs="12">
 		                <Card id="gene-summary-legend">
 			                <CardBody>
-			                	<GeneSummaryLegend/>
+//			                	<GeneSummaryLegend/>
 			                </CardBody>
 		                </Card>
 	                </Col>
