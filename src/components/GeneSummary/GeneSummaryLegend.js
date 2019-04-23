@@ -9,7 +9,6 @@ class GeneSummaryLegend extends Component {
 		let clusterIds = Object.keys(legend.masterClusters);
 		for (const clusterId of clusterIds) {
 			let structure = legend.masterClusters[clusterId].structure;
-			
 			if (legendGroups.hasOwnProperty(structure)){
 				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
 			} else {
@@ -17,12 +16,14 @@ class GeneSummaryLegend extends Component {
 				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
 			}
 		}
+		
 		return legendGroups;
 	}
 	
 	generateLegendForGroup(groupName, legendGroup) {
 		let items = [];
-		for(const item in legendGroup) {
+		for(const key in legendGroup) {
+			let item = legendGroup[key];
 			items.push(<li>{item.id}: {item.cellType}</li>);
 		}
 		if (legendGroup.length > 14) {
