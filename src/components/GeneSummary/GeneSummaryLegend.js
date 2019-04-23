@@ -31,29 +31,30 @@ class GeneSummaryLegend extends Component {
 		if (legendGroup.length > 14) {
 			
 			let half = (legendGroup.length / 2) + (legendGroup.length % 2);
+			
 			return (
 				<Col xs="4">
 					<Row>
 						<Col xs="6">{groupName}
 							<ul>
-								items.map((item, index) => {
+								{items.map((item, index) => {
 									if (index <= half) {
 										return <li>{item.id}: {item.cellType}</li>
 									} else {
 										return null;
 									}
-								})
+								})}
 							</ul>
 						</Col>
 						<Col xs="6">{groupName} (cont)
 							<ul>
-								items.map((item, index) => {
+								{items.map((item, index) => {
 									if (index > half) {
 										return <li>{item.id}: {item.cellType}</li>
 									} else {
 										return null;
 									}
-								})
+								})}
 							</ul>
 						</Col>
 					</Row>
@@ -63,9 +64,9 @@ class GeneSummaryLegend extends Component {
 			return (
 				<Col xs="2">{groupName}
 					<ul>
-						items.map((item, index) => {
+						{items.map((item, index) => {
 							return <li>{item.id}: {item.cellType}</li>
-						})
+						})}
 					</ul>
 				</Col>
 			);
