@@ -7,16 +7,17 @@ class GeneSummaryLegend extends Component {
 	generateLegendGroups() {
 		let legendGroups = {};
 		let clusterIds = Object.keys(legend.masterClusters);
-		console.log(clusterIds)
-//		for (const clusterId of clusterIds) {
-//			let structure = legend.masterClusters[clusterId].structure
+		for (const clusterId of clusterIds) {
+			let structure = legend.masterClusters[clusterId].structure;
+			console.log(structure);
+			
 //			if (legendGroups.hasOwnProperty(structure)){
 //				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
 //			} else {
 //				legendGroups[structure] = [];
 //				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
 //			}
-//		}
+		}
 		return legendGroups;
 	}
 	
