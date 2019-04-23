@@ -23,7 +23,7 @@ class GeneSummaryLegend extends Component {
 	generateLegendForGroup(groupName, legendGroup) {
 		let items = [];
 		
-		for(const item of legendGroup) {
+		for(const item in legendGroup) {
 			items.push({ id: item.id, cellType: item.cellType} );
 		}
 		
