@@ -72,31 +72,31 @@ class GeneSummaryViolinPlotD3 extends Component {
 			        		return(bins);
 			        	})
 			        	.entries(data);
-//		
-//			        let maxWidth = (width/47);
-//			        var xNum = d3.scaleLinear()
-//				    	.range([0, x.bandwidth()])
-//				    	.domain([-maxWidth,maxWidth]);
-//		
-//			        var myColor = d3.scaleOrdinal().domain([1,47]).range(d3ScaleChromatic.schemeSet3);
-//			        
-//			        svg.selectAll("myViolin")
-//				    	.data(sumstat)
-//				    	.enter()        
-//				    	.append("g")
-//				    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
-//				    	.append("path")
-//				    	.style("fill", function(d) {
-//				    		return myColor(d.key);
-//				    	})
-//				        .datum(function(d){ return(d.value)})     
-//				        .style("stroke", "black")
-//				        .attr("d", d3.area()
-//				            .x0(d => xNum(-(d.length/(maxWidth/2))) )
-//				            .x1(d => xNum(d.length/(maxWidth/2)) )
-//				            .y(d => y(d.x0))
-//				            .curve(d3.curveCatmullRom)    
-//				        );
+		
+			        let maxWidth = (width/47);
+			        var xNum = d3.scaleLinear()
+				    	.range([0, x.bandwidth()])
+				    	.domain([-maxWidth,maxWidth]);
+		
+			        var myColor = d3.scaleOrdinal().domain([1,47]).range(d3ScaleChromatic.schemeSet3);
+			        
+			        svg.selectAll("myViolin")
+				    	.data(sumstat)
+				    	.enter()        
+				    	.append("g")
+				    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
+				    	.append("path")
+				    	.style("fill", function(d) {
+				    		return myColor(d.key);
+				    	})
+				        .datum(function(d){ return(d.value)})     
+				        .style("stroke", "black")
+				        .attr("d", d3.area()
+				            .x0(d => xNum(-(d.length/(maxWidth/2))) )
+				            .x1(d => xNum(d.length/(maxWidth/2)) )
+				            .y(d => y(d.x0))
+				            .curve(d3.curveCatmullRom)    
+				        );
 					}
 				});
 			}
