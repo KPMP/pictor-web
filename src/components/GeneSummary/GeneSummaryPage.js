@@ -20,7 +20,7 @@ class GeneSummaryPage extends Component {
     render() {
         return (
             <Container id="gene-summary-page">
-              HI
+                <GeneSearchFormContainer/>
             </Container>
         )
     }
