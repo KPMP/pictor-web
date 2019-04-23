@@ -5,18 +5,18 @@ import { Row, Col } from 'reactstrap';
 class GeneSummaryLegend extends Component {
 	
 	generateLegendGroups() {
-		console.log(legend);
 		let legendGroups = {};
 		let clusterIds = Object.keys(legend.masterClusters);
-		for (const clusterId of clusterIds) {
-			let structure = legend.masterClusters[clusterId].structure
-			if (legendGroups.hasOwnProperty(structure)){
-				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
-			} else {
-				legendGroups[structure] = [];
-				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
-			}
-		}
+		console.log(clusterIds)
+//		for (const clusterId of clusterIds) {
+//			let structure = legend.masterClusters[clusterId].structure
+//			if (legendGroups.hasOwnProperty(structure)){
+//				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
+//			} else {
+//				legendGroups[structure] = [];
+//				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
+//			}
+//		}
 		return legendGroups;
 	}
 	
