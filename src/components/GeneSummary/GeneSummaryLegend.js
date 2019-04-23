@@ -22,39 +22,23 @@ class GeneSummaryLegend extends Component {
 	
 	generateLegendForGroup(groupName, legendGroup) {
 		let items = [];
-		
 		for(const item in legendGroup) {
-			items.push({ id: item.id, cellType: item.cellType} );
+			items.push(<li>{item.id}: {item.cellType}</li>);
 		}
-		
-		console.log(items);
 		if (legendGroup.length > 14) {
 			
 			let half = (legendGroup.length / 2) + (legendGroup.length % 2);
-			
 			return (
 				<Col xs="4">
 					<Row>
 						<Col xs="6">{groupName}
 							<ul>
-								{items.map((item, index) => {
-									if (index <= half) {
-										return <li>{item.id}: {item.cellType}</li>
-									} else {
-										return null;
-									}
-								})}
+								{items.slice(0,half)}
 							</ul>
 						</Col>
 						<Col xs="6">{groupName} (cont)
 							<ul>
-								{items.map((item, index) => {
-									if (index > half) {
-										return <li>{item.id}: {item.cellType}</li>
-									} else {
-										return null;
-									}
-								})}
+								{items.slice(half, legendGroup.length)}
 							</ul>
 						</Col>
 					</Row>
@@ -64,9 +48,7 @@ class GeneSummaryLegend extends Component {
 			return (
 				<Col xs="2">{groupName}
 					<ul>
-						{items.map((item, index) => {
-							return <li>{item.id}: {item.cellType}</li>
-						})}
+						{items}
 					</ul>
 				</Col>
 			);
