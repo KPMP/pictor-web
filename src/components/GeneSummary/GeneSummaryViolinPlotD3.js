@@ -29,15 +29,15 @@ class GeneSummaryViolinPlotD3 extends Component {
 		let width = 1100 - margin.left - margin.right;
 		let height = 200 - margin.top - margin.bottom;
 		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
-//		
-//		d3.csv(path, function(data) {
-//			
-//			let xDomain = [];
-//			data.forEach(function(row) {
-//				if (!xDomain.includes(row.cluster)) {
-//					xDomain.push(row.cluster);
-//				}
-//			});
+		
+		d3.csv(path, function(data) {
+			
+			let xDomain = [];
+			data.forEach(function(row) {
+				if (!xDomain.includes(row.cluster)) {
+					xDomain.push(row.cluster);
+				}
+			});
 //
 //			if(xDomain.length === 0) {
 //				let svg = d3.select(id)
@@ -113,7 +113,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 //			            .curve(d3.curveCatmullRom)    
 //			        );
 //			}
-//		});
+		});
 		
 	}
 	
