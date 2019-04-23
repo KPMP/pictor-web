@@ -24,11 +24,11 @@ class GeneSummaryViolinPlotD3 extends Component {
 				existingSVG.parentNode.removeChild(existingSVG);
 			}
 		}
-//		
-//		let margin = {top: 10, right: 30, bottom: 30, left: 30};
-//		let width = 1100 - margin.left - margin.right;
-//		let height = 200 - margin.top - margin.bottom;
-//		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
+		
+		let margin = {top: 10, right: 30, bottom: 30, left: 30};
+		let width = 1100 - margin.left - margin.right;
+		let height = 200 - margin.top - margin.bottom;
+		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
 //		
 //		d3.csv(path, function(data) {
 //			
