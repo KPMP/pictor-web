@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardBody, Button } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 import { AutoComplete, Form } from 'antd';
 import genes from '../../data/genes';
 import { withRouter } from "react-router-dom";
@@ -30,7 +30,8 @@ class GeneSearchForm extends Component {
             if (limitedList.length === 0) {
                 this.setState({validateStatus: "error", help: "Gene not found"});
             } else {
-                this.setState({validateStatus: "success", help:""})
+                this.setState({validateStatus: "success", help:""});
+                this.setState({geneSymbol: limitedList[0]});
             }
             this.setState({dataSource: limitedList.slice(0,10)});
         }
@@ -38,6 +39,7 @@ class GeneSearchForm extends Component {
 
     handleSelect = (value) => {
         this.setState({geneSymbol: value});
+        this.handleSubmit();
         ReactGA.event({
 			category: 'Gene Search',
 			action: value
@@ -59,9 +61,10 @@ class GeneSearchForm extends Component {
                         <Form.Item validateStatus={this.state.validateStatus} help={this.state.help}>
                             {getFieldDecorator('geneSymbol', { })(
                             		<AutoComplete style={{"width": "200px"}} dataSource={this.state.dataSource} className="pr-3"
-                                          onSearch={this.handleSearch} onSelect={this.handleSelect} name="geneSymbol"/>
+                            			onSearch={this.handleSearch} onSelect={this.handleSelect} name="geneSymbol"
+                                        defaultActiveFirstOption={true} backfill={true} defaultValue={this.state.geneSymbol}
+                            		/>
                             )}
-                            <Button color="primary" onClick={this.handleSubmit}>Search</Button>
                         </Form.Item>
                     </Form>
                 </CardBody>
