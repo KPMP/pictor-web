@@ -46,7 +46,7 @@ class GeneSearchForm extends Component {
 
     handleSubmit(e) {
         this.props.setSelectedGene(this.state.geneSymbol);
-        this.props.navigate("summary");
+        this.props.dispatch(() => this.props.history.push("summary"));
     }
 
     render() {
