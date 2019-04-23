@@ -31,7 +31,6 @@ class GeneSearchForm extends Component {
                 this.setState({validateStatus: "error", help: "Gene not found"});
             } else {
                 this.setState({validateStatus: "success", help:""});
-                this.setState({geneSymbol: limitedList[0]});
             }
             this.setState({dataSource: limitedList.slice(0,10)});
         }
