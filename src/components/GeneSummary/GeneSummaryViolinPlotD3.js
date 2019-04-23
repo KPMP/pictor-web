@@ -34,21 +34,21 @@ class GeneSummaryViolinPlotD3 extends Component {
 			this.showNoResults(id, width, margin);
 		} else {
 			d3.csv(path, function(error, data) {
-//				if (error && error.target.status === 404) {
-//					thisComponent.showNoResults(id, width, margin);
-//				} else {
-//					let svg = d3.select(id)
-//						.append("svg")
-//						.attr("width", width + margin.left + margin.right)
-//						.attr("height", height + margin.top + margin.bottom)
-//						.append("g")
-//						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-//					
-//					var y = d3.scaleLinear()
-//				    	.domain([0,5])
-//				    	.range([height, 0]);
-//					
-//					svg.append("g").call( d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")) );
+				if (error && error.target.status === 404) {
+					thisComponent.showNoResults(id, width, margin);
+				} else {
+					let svg = d3.select(id)
+						.append("svg")
+						.attr("width", width + margin.left + margin.right)
+						.attr("height", height + margin.top + margin.bottom)
+						.append("g")
+						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+					
+					var y = d3.scaleLinear()
+				    	.domain([0,5])
+				    	.range([height, 0]);
+					
+					svg.append("g").call( d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")) );
 //		
 //					var x = d3.scaleBand()
 //				    	.range([ 0, width ])
@@ -97,7 +97,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 //				            .y(d => y(d.x0))
 //				            .curve(d3.curveCatmullRom)    
 //				        );
-//					}
+					}
 				});
 			}
 	}
