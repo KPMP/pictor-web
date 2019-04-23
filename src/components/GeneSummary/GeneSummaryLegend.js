@@ -12,48 +12,50 @@ class GeneSummaryLegend extends Component {
 			
 			if (legendGroups.hasOwnProperty(structure)){
 				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
+			} else {
+				legendGroups[structure] = [];
+				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
 			}
-//			else {
-//				legendGroups[structure] = [];
-//				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
-//			}
 		}
 		return legendGroups;
 	}
 	
 	generateLegendForGroup(groupName, legendGroup) {
 		let items = [];
-		for(const item of legendGroup) {
-			items.push(<li>{item.id}: {item.cellType}</li>);
-		}
-		if (legendGroup.length > 14) {
-			
-			let half = (legendGroup.length / 2) + (legendGroup.length % 2);
-			return (
-				<Col xs="4">
-					<Row>
-						<Col xs="6">{groupName}
-							<ul>
-								{items.slice(0,half)}
-							</ul>
-						</Col>
-						<Col xs="6">{groupName} (cont)
-							<ul>
-								{items.slice(half, legendGroup.length)}
-							</ul>
-						</Col>
-					</Row>
-				</Col>
-			);
-		} else {
-			return (
-				<Col xs="2">{groupName}
-					<ul>
-						{items}
-					</ul>
-				</Col>
-			);
-		}
+		console.log(groupName);
+		console.log(legendGroup);
+		
+//		for(const item of legendGroup) {
+//			items.push(<li>{item.id}: {item.cellType}</li>);
+//		}
+//		if (legendGroup.length > 14) {
+//			
+//			let half = (legendGroup.length / 2) + (legendGroup.length % 2);
+//			return (
+//				<Col xs="4">
+//					<Row>
+//						<Col xs="6">{groupName}
+//							<ul>
+//								{items.slice(0,half)}
+//							</ul>
+//						</Col>
+//						<Col xs="6">{groupName} (cont)
+//							<ul>
+//								{items.slice(half, legendGroup.length)}
+//							</ul>
+//						</Col>
+//					</Row>
+//				</Col>
+//			);
+//		} else {
+//			return (
+//				<Col xs="2">{groupName}
+//					<ul>
+//						{items}
+//					</ul>
+//				</Col>
+//			);
+//		}
 	}
 	
 	render() {
