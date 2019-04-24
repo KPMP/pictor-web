@@ -28,34 +28,14 @@ class GeneSummaryLegend extends Component {
 			let item = legendGroup[key];
 			items.push(<li>{item.id}: {item.cellType}</li>);
 		}
-		if (legendGroup.length > 14) {
-			
-			let half = (legendGroup.length / 2) + (legendGroup.length % 2);
-			return (
-				<Col xs="4">
-					<Row>
-						<Col xs="6">{groupName}
-							<ul>
-								{items.slice(0,half)}
-							</ul>
-						</Col>
-						<Col xs="6">{groupName} (cont)
-							<ul>
-								{items.slice(half, legendGroup.length)}
-							</ul>
-						</Col>
-					</Row>
-				</Col>
-			);
-		} else {
-			return (
-				<Col xs="2">{groupName}
-					<ul>
-						{items}
-					</ul>
-				</Col>
-			);
-		}
+		
+		return (
+			<Col xs="3">{groupName}
+				<ul>
+					{items}
+				</ul>
+			</Col>
+		);
 	}
 	
 	render() {
