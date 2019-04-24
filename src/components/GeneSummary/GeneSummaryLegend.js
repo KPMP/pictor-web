@@ -6,14 +6,16 @@ class GeneSummaryLegend extends Component {
 	
 	generateLegendGroups() {
 		let legendGroups = {};
-		let clusterIds = Object.keys(legend.masterClusters);
+		let clusterIds = Object.keys(legend.clusters);
 		for (const clusterId of clusterIds) {
-			let structure = legend.masterClusters[clusterId].structure;
+			let structure = legend.clusters[clusterId].structure;
 			if (legendGroups.hasOwnProperty(structure)){
-				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
+				if (legendGroups[structure].filter(e => e.id === legend.clusters[clusterId].rollupId).length === 0) {
+					legendGroups[structure].push({ id: legend.clusters[clusterId].rollupId, cellType: legend.clusters[clusterId].rollupType });
+				}
 			} else {
 				legendGroups[structure] = [];
-				legendGroups[structure].push({ id: clusterId, cellType: legend.masterClusters[clusterId].cellType });
+				legendGroups[structure].push({ id: legend.clusters[clusterId].rollupId, cellType: legend.clusters[clusterId].rollupType });
 			}
 		}
 		

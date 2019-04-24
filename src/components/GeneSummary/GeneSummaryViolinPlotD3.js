@@ -52,7 +52,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		
 					var x = d3.scaleBand()
 				    	.range([ 0, width ])
-				    	.domain([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47])
+				    	.domain([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24])
 				    	.padding(0.1);
 					
 					svg.append("g")
@@ -61,7 +61,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 				   
 		
 			        var sumstat = d3.nest() 
-			        	.key(function(d) { return d.cluster;})
+			        	.key(function(d) { return d.rollup;})
 			        	.rollup(function(d) {  
 			        		let input = d.map(function(g) { return g.readcount;});
 			        		var histogram = d3.histogram()
@@ -73,12 +73,12 @@ class GeneSummaryViolinPlotD3 extends Component {
 			        	})
 			        	.entries(data);
 		
-			        let maxWidth = (width/47);
+			        let maxWidth = (width/48);
 			        var xNum = d3.scaleLinear()
 				    	.range([0, x.bandwidth()])
 				    	.domain([-maxWidth,maxWidth]);
 		
-			        var myColor = d3.scaleOrdinal().domain([1,47]).range(d3ScaleChromatic.schemeSet3);
+			        var myColor = d3.scaleSequential().domain([1,24]).interpolator(d3ScaleChromatic.interpolateSinebow);
 			        
 			        svg.selectAll("myViolin")
 				    	.data(sumstat)
@@ -92,8 +92,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 				        .datum(function(d){ return(d.value)})     
 				        .style("stroke", "black")
 				        .attr("d", d3.area()
-				            .x0(d => xNum(-(d.length/(maxWidth/2))) )
-				            .x1(d => xNum(d.length/(maxWidth/2)) )
+				            .x0(d => xNum(-(d.length/(maxWidth))) )
+				            .x1(d => xNum(d.length/(maxWidth)) )
 				            .y(d => y(d.x0))
 				            .curve(d3.curveCatmullRom)    
 				        );
