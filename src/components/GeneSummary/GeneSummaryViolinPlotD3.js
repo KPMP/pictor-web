@@ -34,6 +34,14 @@ class GeneSummaryViolinPlotD3 extends Component {
 			this.showNoResults(id, width, margin);
 		} else {
 			d3.csv(path, function(error, data) {
+				
+				let maxValue = 0;
+				data.forEach(function(row) {
+					if (row.readcount > maxValue) {
+						maxValue = row.readcount;
+					}
+				});
+				
 				if (error && error.target.status === 404) {
 					thisComponent.showNoResults(id, width, margin);
 				} else {
@@ -45,7 +53,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 					
 					var y = d3.scaleLinear()
-				    	.domain([0,5])
+				    	.domain([0,maxValue])
 				    	.range([height, 0]);
 					
 					svg.append("g").call( d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")) );
@@ -66,7 +74,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 			        		let input = d.map(function(g) { return g.readcount;});
 			        		var histogram = d3.histogram()
 			        			.domain(y.domain())
-			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
+			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,maxValue))
 			        			.value(d => d);
 			        		let bins = histogram(input);
 			        		return(bins);
