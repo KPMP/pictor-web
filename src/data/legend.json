@@ -1,29 +1,120 @@
 {
     "rollups": {
-        "1": "Parietal Cells",
-        "2": "Podocytes",
-        "3": "Endothelial Glomerular Capillaries",
-        "4": "Mesangial Cells",
-        "5": "Proximal Tubules",
-        "6": "Loop of Henle",
-        "7": "Distal Tubules",
-        "8": "Collecting Duct Principal Cells",
-        "9": "Collecting Duct Intercalated Cells",
-        "10": "Endothelial Arteries",
-        "11": "Peritubular Capillaries",
-        "12": "Endothelial Lymphatic Cells",
-        "13": "Vascular Smooth Muscle Cells",
-        "14": "Interstial Fibroblasts",
-        "15": "Macrophages",
-        "16": "Natural Killer Cells",
-        "17": "Monocytes",
-        "18": "Effector Memory T-cells",
-        "19": "Cytotoxic T-cells",
-        "20": "Natural Killer T-cells",
-        "21": "Activated T-cells",
-        "22": "Memory T-cells",
-        "23": "ISG-activated T-cells",
-        "24": "B-cells"
+        "1": {
+            "rollupId": "1",
+            "rollupType": "Parietal Cells",
+            "structure": "Glomerulus"
+        },
+        "2": {
+            "rollupId": "2",
+            "rollupType": "Podocytes",
+            "structure": "Glomerulus"
+        },
+        "3": {
+            "rollupId": "3",
+            "rollupType": "Endothelial Glomerular Capillaries",
+            "structure": "Glomerulus"
+        },
+        "4": {
+            "rollupId": "4",
+            "rollupType": "Mesangial Cells",
+            "structure": "Glomerulus"
+        },
+        "5": {
+            "rollupId": "5",
+            "rollupType": "Proximal Tubules",
+            "structure": "Tubules"
+        },
+        "6": {
+            "rollupId": "6",
+            "rollupType": "Loop of Henle",
+            "structure": "Tubules"
+        },
+        "7": {
+            "rollupId": "7",
+            "rollupType": "Distal Tubules",
+            "structure": "Tubules"
+        },
+        "8": {
+            "rollupId": "8",
+            "rollupType": "Collecting Duct Principal Cells",
+            "structure": "Tubules"
+        },
+        "9": {
+            "rollupId": "9",
+            "rollupType": "Collecting Duct Intercalated Cells",
+            "structure": "Tubules"
+        },
+        "10": {
+            "rollupId": "10",
+            "rollupType": "Endothelial Arteries",
+            "structure": "Vessels"
+        },
+        "11": {
+            "rollupId": "11",
+            "rollupType": "Peritubular Capillaries",
+            "structure": "Vessels"
+        },
+        "12": {
+            "rollupId": "12",
+            "rollupType": "Vascular Smooth Muscle Cells",
+            "structure": "Vessels"
+        },
+        "13": {
+            "rollupId": "13",
+            "rollupType": "Interstial Fibroblasts",
+            "structure": "Interstitium"
+        },
+        "14": {
+            "rollupId": "14",
+            "rollupType": "Macrophages",
+            "structure": "Interstitium"
+        },
+        "15": {
+            "rollupId": "15",
+            "rollupType": "Natural Killer Cells",
+            "structure": "Interstitium"
+        },
+        "16": {
+            "rollupId": "16",
+            "rollupType": "Monocytes",
+            "structure": "Interstitium"
+        },
+        "17": {
+            "rollupId": "17",
+            "rollupType": "Effector Memory T-cells",
+            "structure": "Interstitium"
+        },
+        "18": {
+            "rollupId": "18",
+            "rollupType": "Cytotoxic T-cells",
+            "structure": "Interstitium"
+        },
+        "19": {
+            "rollupId": "19",
+            "rollupType": "Natural Killer T-cells",
+            "structure": "Interstitium"
+        },
+        "20": {
+            "rollupId": "20",
+            "rollupType": "Activated T-cells",
+            "structure": "Interstitium"
+        },
+        "21": {
+            "rollupId": "21",
+            "rollupType": "Memory T-cells",
+            "structure": "Interstitium"
+        },
+        "22": {
+            "rollupId": "22",
+            "rollupType": "ISG-activated T-cells",
+            "structure": "Interstitium"
+        },
+        "23": {
+            "rollupId": "23",
+            "rollupType": "B-cells",
+            "structure": "Interstitium"
+        }
     },
     "clusters": {
         "1": {
@@ -31,462 +122,585 @@
             "rollupType": "Parietal Cells",
             "rollupId": "1",
             "clusterType": "Parietal Cells",
-            "clusterId": "1"
+            "clusterId": "1",
+            "clusterAbbr": "PEC",
+            "isExcluded": ""
         },
         "2": {
             "structure": "Glomerulus",
             "rollupType": "Podocytes",
             "rollupId": "2",
             "clusterType": "Podocytes",
-            "clusterId": "2"
+            "clusterId": "2",
+            "clusterAbbr": "POD",
+            "isExcluded": ""
         },
         "3": {
             "structure": "Glomerulus",
             "rollupType": "Podocytes",
             "rollupId": "2",
             "clusterType": "Podocytes",
-            "clusterId": "3"
+            "clusterId": "3",
+            "clusterAbbr": "POD",
+            "isExcluded": ""
         },
         "4": {
             "structure": "Glomerulus",
             "rollupType": "Endothelial Glomerular Capillaries",
             "rollupId": "3",
             "clusterType": "Endothelial Glomerular Capillaries",
-            "clusterId": "4"
+            "clusterId": "4",
+            "clusterAbbr": "GC",
+            "isExcluded": ""
         },
         "5": {
             "structure": "Glomerulus",
             "rollupType": "Mesangial Cells",
             "rollupId": "4",
             "clusterType": "Mesangial Cells",
-            "clusterId": "5"
+            "clusterId": "5",
+            "clusterAbbr": "MC",
+            "isExcluded": ""
         },
         "6": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
             "clusterType": "Proximal Tubules (NOS) - 1",
-            "clusterId": "6"
+            "clusterId": "6",
+            "clusterAbbr": "PT (NOS)",
+            "isExcluded": ""
         },
         "7": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
             "clusterType": "Proximal Tubules (NOS) - 2",
-            "clusterId": "7"
+            "clusterId": "7",
+            "clusterAbbr": "PT (NOS)",
+            "isExcluded": ""
         },
         "8": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
             "clusterType": "Proximal Tubules (NOS) - 3",
-            "clusterId": "8"
+            "clusterId": "8",
+            "clusterAbbr": "PT (NOS)",
+            "isExcluded": ""
         },
         "9": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
             "clusterType": "Proximal Tubules (NOS) - 4",
-            "clusterId": "9"
+            "clusterId": "9",
+            "clusterAbbr": "PT (NOS)",
+            "isExcluded": ""
         },
         "10": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
             "clusterType": "Proximal Tubules (NOS) - 5",
-            "clusterId": "10"
+            "clusterId": "10",
+            "clusterAbbr": "PT (NOS)",
+            "isExcluded": ""
         },
         "11": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
             "clusterType": "Proximal Tubules (NOS) - 6",
-            "clusterId": "11"
+            "clusterId": "11",
+            "clusterAbbr": "PT (NOS)",
+            "isExcluded": ""
         },
         "12": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
-            "clusterType": "Proximal Tubules (NOS) - 7",
-            "clusterId": "12"
+            "clusterType": "Proximal Tubules (NOS) - Stress/Inflam",
+            "clusterId": "12",
+            "clusterAbbr": "PT (NOS) SI",
+            "isExcluded": ""
         },
         "13": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
-            "clusterType": "Proximal Tubules (NOS) - Stress/Inflam",
-            "clusterId": "13"
+            "clusterType": "Proximal Tubules Convoluted - S1",
+            "clusterId": "13",
+            "clusterAbbr": "PT-S1",
+            "isExcluded": ""
         },
         "14": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
-            "clusterType": "Proximal Tubules Convoluted - S1",
-            "clusterId": "14"
+            "clusterType": "Proximal Tubules Convoluted/Straight - S2",
+            "clusterId": "14",
+            "clusterAbbr": "PT-S2",
+            "isExcluded": ""
         },
         "15": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
-            "clusterType": "Proximal Tubules Convoluted/Straight - S2",
-            "clusterId": "15"
+            "clusterType": "Novel Proximal Tubules CFH+ Subpopulation (S2)",
+            "clusterId": "15",
+            "clusterAbbr": "PT-S2 - CFH+",
+            "isExcluded": ""
         },
         "16": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
-            "clusterType": "Novel Proximal Tubules CFH+ Subpopulation (S2)",
-            "clusterId": "16"
+            "clusterType": "Proximal Tubules Straight - S3",
+            "clusterId": "16",
+            "clusterAbbr": "PT-S3",
+            "isExcluded": ""
         },
         "17": {
             "structure": "Tubules",
             "rollupType": "Proximal Tubules",
             "rollupId": "5",
-            "clusterType": "Proximal Tubules Straight - S3",
-            "clusterId": "17"
+            "clusterType": "Proximal Tubules Straight - S3 - Fibrinogen+",
+            "clusterId": "17",
+            "clusterAbbr": "PT-S3 - F+",
+            "isExcluded": ""
         },
         "18": {
             "structure": "Tubules",
-            "rollupType": "Proximal Tubules",
-            "rollupId": "5",
-            "clusterType": "Proximal Tubules Straight - S3 - Fibrinogen+",
-            "clusterId": "18"
+            "rollupType": "Loop of Henle",
+            "rollupId": "6",
+            "clusterType": "Loop of Henle (NOS)",
+            "clusterId": "18",
+            "clusterAbbr": "LOH (NOS)",
+            "isExcluded": ""
         },
         "19": {
             "structure": "Tubules",
             "rollupType": "Loop of Henle",
             "rollupId": "6",
-            "clusterType": "Loop of Henle (NOS)",
-            "clusterId": "19"
+            "clusterType": "Descending Thin Limb (NOS)",
+            "clusterId": "19",
+            "clusterAbbr": "DTL (NOS)",
+            "isExcluded": ""
         },
         "20": {
             "structure": "Tubules",
             "rollupType": "Loop of Henle",
             "rollupId": "6",
-            "clusterType": "Descending Thin Limb (NOS)",
-            "clusterId": "20"
-        },
-        "24": {
-            "structure": "Tubules",
-            "rollupType": "Loop of Henle",
-            "rollupId": "6",
             "clusterType": "Ascending Thin Limb - 1",
-            "clusterId": "24"
+            "clusterId": "20",
+            "clusterAbbr": "aTL-1",
+            "isExcluded": ""
         },
-        "25": {
+        "21": {
             "structure": "Tubules",
             "rollupType": "Loop of Henle",
             "rollupId": "6",
             "clusterType": "Ascending Thin Limb - 2",
-            "clusterId": "25"
+            "clusterId": "21",
+            "clusterAbbr": "aTL-2",
+            "isExcluded": ""
         },
-        "26": {
+        "22": {
             "structure": "Tubules",
             "rollupType": "Loop of Henle",
             "rollupId": "6",
             "clusterType": "Ascending Thin Limb - 3",
-            "clusterId": "26"
+            "clusterId": "22",
+            "clusterAbbr": "aTL-3",
+            "isExcluded": ""
+        },
+        "23": {
+            "structure": "Tubules",
+            "rollupType": "Distal Tubules",
+            "rollupId": "7",
+            "clusterType": "Thick Ascending Limb - Distal Straight",
+            "clusterId": "23",
+            "clusterAbbr": "TAL",
+            "isExcluded": ""
+        },
+        "24": {
+            "structure": "Tubules",
+            "rollupType": "Distal Tubules",
+            "rollupId": "7",
+            "clusterType": "Thick Ascending Limb (NOS) - 1",
+            "clusterId": "24",
+            "clusterAbbr": "TAL-1",
+            "isExcluded": ""
+        },
+        "25": {
+            "structure": "Tubules",
+            "rollupType": "Distal Tubules",
+            "rollupId": "7",
+            "clusterType": "Thick Ascending Limb (NOS) - 2",
+            "clusterId": "25",
+            "clusterAbbr": "TAL-2",
+            "isExcluded": ""
+        },
+        "26": {
+            "structure": "Tubules",
+            "rollupType": "Distal Tubules",
+            "rollupId": "7",
+            "clusterType": "Thick Ascending Limb (NOS) - 3",
+            "clusterId": "26",
+            "clusterAbbr": "TAL-3",
+            "isExcluded": ""
         },
         "27": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Limb - Distal Straight",
-            "clusterId": "27"
+            "clusterType": "Thick Ascending Limb (NOS) - 4",
+            "clusterId": "27",
+            "clusterAbbr": "TAL-4",
+            "isExcluded": ""
         },
         "28": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Limb (NOS) - 1",
-            "clusterId": "28"
+            "clusterType": "Thick Ascending Limb (NOS) - 5",
+            "clusterId": "28",
+            "clusterAbbr": "TAL-5",
+            "isExcluded": ""
         },
         "29": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Limb (NOS) - 2",
-            "clusterId": "29"
+            "clusterType": "Thick Ascending Limb (NOS) - 6",
+            "clusterId": "29",
+            "clusterAbbr": "TAL-6",
+            "isExcluded": ""
         },
         "30": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Limb (NOS) - 3",
-            "clusterId": "30"
+            "clusterType": "Thick Ascending Loop of Henle",
+            "clusterId": "30",
+            "clusterAbbr": "TALOH",
+            "isExcluded": ""
         },
         "31": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Limb (NOS) - 4",
-            "clusterId": "31"
+            "clusterType": "Distal Convoluted Tubule (NOS)",
+            "clusterId": "31",
+            "clusterAbbr": "DCT (NOS)",
+            "isExcluded": ""
         },
         "32": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Limb (NOS) - 5",
-            "clusterId": "32"
+            "clusterType": "Distal Convolution / Connecting Tubule (NOS) - 1",
+            "clusterId": "32",
+            "clusterAbbr": "DCT / CNT (NOS)",
+            "isExcluded": ""
         },
         "33": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Limb (NOS) - 6",
-            "clusterId": "33"
+            "clusterType": "Distal Convolution / Connecting Tubule (NOS) - 2",
+            "clusterId": "33",
+            "clusterAbbr": "DCT / CNT (NOS)",
+            "isExcluded": ""
         },
         "34": {
             "structure": "Tubules",
             "rollupType": "Distal Tubules",
             "rollupId": "7",
-            "clusterType": "Thick Ascending Loop of Henle",
-            "clusterId": "34"
-        },
-        "36": {
-            "structure": "Tubules",
-            "rollupType": "Distal Tubules",
-            "rollupId": "7",
-            "clusterType": "Distal Convoluted Tubule (NOS)",
-            "clusterId": "36"
-        },
-        "39": {
-            "structure": "Tubules",
-            "rollupType": "Distal Tubules",
-            "rollupId": "7",
-            "clusterType": "Distal Convolution / Connecting Tubule (NOS) - 1",
-            "clusterId": "39"
-        },
-        "40": {
-            "structure": "Tubules",
-            "rollupType": "Distal Tubules",
-            "rollupId": "7",
-            "clusterType": "Distal Convolution / Connecting Tubule (NOS) - 2",
-            "clusterId": "40"
-        },
-        "41": {
-            "structure": "Tubules",
-            "rollupType": "Distal Tubules",
-            "rollupId": "7",
             "clusterType": "Connecting Tubule (NOS)",
-            "clusterId": "41"
+            "clusterId": "34",
+            "clusterAbbr": "CNT",
+            "isExcluded": ""
         },
-        "42": {
+        "35": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Principal Cells",
             "rollupId": "8",
             "clusterType": "Collecting System - Principal Cells (NOS) - 1",
-            "clusterId": "42"
+            "clusterId": "35",
+            "clusterAbbr": "PC (NOS) - 1",
+            "isExcluded": ""
         },
-        "43": {
+        "36": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Principal Cells",
             "rollupId": "8",
             "clusterType": "Collecting System - Principal Cells (NOS) - 2",
-            "clusterId": "43"
+            "clusterId": "36",
+            "clusterAbbr": "PC (NOS) - 2",
+            "isExcluded": ""
         },
-        "44": {
+        "37": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Principal Cells",
             "rollupId": "8",
             "clusterType": "Collecting System - Principal Cells (NOS) - 3",
-            "clusterId": "44"
+            "clusterId": "37",
+            "clusterAbbr": "PC (NOS) - 3",
+            "isExcluded": ""
         },
-        "45": {
+        "38": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Principal Cells",
             "rollupId": "8",
             "clusterType": "Collecting System - Principal Cells (NOS) - 4",
-            "clusterId": "45"
+            "clusterId": "38",
+            "clusterAbbr": "PC (NOS) - 4",
+            "isExcluded": ""
         },
-        "47": {
+        "39": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Principal Cells",
             "rollupId": "8",
             "clusterType": "Collecting System - Principal Cells Cortical Collecting Duct",
-            "clusterId": "47"
+            "clusterId": "39",
+            "clusterAbbr": "CCD-PC",
+            "isExcluded": ""
         },
-        "48": {
+        "40": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Principal Cells",
             "rollupId": "8",
             "clusterType": "Collecting System - Principal Cells Medullary Collecting Duct",
-            "clusterId": "48"
+            "clusterId": "40",
+            "clusterAbbr": "MCD-PC",
+            "isExcluded": ""
         },
-        "49": {
+        "41": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Principal Cells",
             "rollupId": "8",
             "clusterType": "Collecting System - Principal Cells - Stressed Dissoc Subset",
-            "clusterId": "49"
+            "clusterId": "41",
+            "clusterAbbr": "StressPC",
+            "isExcluded": ""
         },
-        "50": {
+        "42": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Intercalated Cells",
             "rollupId": "9",
             "clusterType": "Collecting System - Intercalated Cells (NOS) - 1",
-            "clusterId": "50"
+            "clusterId": "42",
+            "clusterAbbr": "IC (NOS) - 1",
+            "isExcluded": ""
         },
-        "51": {
+        "43": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Intercalated Cells",
             "rollupId": "9",
             "clusterType": "Collecting System - Intercalated Cells (NOS) - 2",
-            "clusterId": "51"
+            "clusterId": "43",
+            "clusterAbbr": "IC (NOS) - 2",
+            "isExcluded": ""
         },
-        "52": {
+        "44": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Intercalated Cells",
             "rollupId": "9",
             "clusterType": "Collecting System - Intercalated Cells (NOS) - 3",
-            "clusterId": "52"
+            "clusterId": "44",
+            "clusterAbbr": "IC (NOS) - 3",
+            "isExcluded": ""
         },
-        "53": {
+        "45": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Intercalated Cells",
             "rollupId": "9",
             "clusterType": "Collecting System - Intercalated Cells Type A (Cortex)",
-            "clusterId": "53"
+            "clusterId": "45",
+            "clusterAbbr": "IC-A1",
+            "isExcluded": ""
         },
-        "54": {
+        "46": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Intercalated Cells",
             "rollupId": "9",
             "clusterType": "Collecting System - Intercalated Cells Type A (Medulla)",
-            "clusterId": "54"
+            "clusterId": "46",
+            "clusterAbbr": "IC-A2",
+            "isExcluded": ""
         },
-        "55": {
+        "47": {
             "structure": "Tubules",
             "rollupType": "Collecting Duct Intercalated Cells",
             "rollupId": "9",
             "clusterType": "Collecting System - Intercalated Cells Type B",
-            "clusterId": "55"
+            "clusterId": "47",
+            "clusterAbbr": "IC-B",
+            "isExcluded": ""
         },
-        "60": {
+        "48": {
             "structure": "Vessels",
             "rollupType": "Endothelial Arteries",
             "rollupId": "10",
             "clusterType": "Endothelial Arteriole (NOS)",
-            "clusterId": "60"
+            "clusterId": "48",
+            "clusterAbbr": "EC-AEA (NOS)",
+            "isExcluded": ""
         },
-        "65": {
+        "49": {
             "structure": "Vessels",
             "rollupType": "Peritubular Capillaries",
             "rollupId": "11",
             "clusterType": "Peritubular Capillaries",
-            "clusterId": "65"
+            "clusterId": "49",
+            "clusterAbbr": "EC-PT",
+            "isExcluded": ""
         },
-        "66": {
+        "50": {
             "structure": "Vessels",
             "rollupType": "Peritubular Capillaries",
             "rollupId": "11",
             "clusterType": "Descending Vasa Recta",
-            "clusterId": "66"
+            "clusterId": "50",
+            "clusterAbbr": "EC-DVR",
+            "isExcluded": ""
         },
-        "67": {
+        "51": {
             "structure": "Vessels",
             "rollupType": "Peritubular Capillaries",
             "rollupId": "11",
             "clusterType": "Aescending Vasa Recta",
-            "clusterId": "67"
+            "clusterId": "51",
+            "clusterAbbr": "EC-AVR",
+            "isExcluded": ""
         },
-        "68": {
+        "52": {
             "structure": "Vessels",
-            "rollupType": "Endothelial Lymphatic Cells",
+            "rollupType": "Vascular Smooth Muscle Cells",
             "rollupId": "12",
-            "clusterType": "Lymphatic Cells",
-            "clusterId": "68"
-        },
-        "69": {
-            "structure": "Vessels",
-            "rollupType": "Vascular Smooth Muscle Cells",
-            "rollupId": "13",
             "clusterType": "Vascular Smooth Muscle Cells and Pericytes (NOS)",
-            "clusterId": "69"
+            "clusterId": "52",
+            "clusterAbbr": "vSMC/P (NOS)",
+            "isExcluded": ""
         },
-        "70": {
+        "53": {
             "structure": "Vessels",
             "rollupType": "Vascular Smooth Muscle Cells",
-            "rollupId": "13",
+            "rollupId": "12",
             "clusterType": "Vascular Smooth Muscle Cells / Mesangial Cells (NOS)",
-            "clusterId": "70"
+            "clusterId": "53",
+            "clusterAbbr": "vSMC/M (NOS)",
+            "isExcluded": ""
         },
-        "73": {
+        "54": {
             "structure": "Interstitium",
             "rollupType": "Interstial Fibroblasts",
-            "rollupId": "14",
+            "rollupId": "13",
             "clusterType": "Interstial Fibroblasts",
-            "clusterId": "73"
+            "clusterId": "54",
+            "clusterAbbr": "FIB",
+            "isExcluded": ""
         },
-        "76": {
+        "55": {
             "structure": "Interstitium",
             "rollupType": "Macrophages",
-            "rollupId": "15",
+            "rollupId": "14",
             "clusterType": "Macrophages",
-            "clusterId": "76"
+            "clusterId": "55",
+            "clusterAbbr": "MAC",
+            "isExcluded": ""
         },
-        "78": {
+        "56": {
+            "structure": "Interstitium",
+            "rollupType": "Macrophages",
+            "rollupId": "14",
+            "clusterType": "Macrophages - Tissue Resident",
+            "clusterId": "56",
+            "clusterAbbr": "MAC-TR",
+            "isExcluded": ""
+        },
+        "57": {
             "structure": "Interstitium",
             "rollupType": "Natural Killer Cells",
-            "rollupId": "16",
+            "rollupId": "15",
             "clusterType": "Natural Killer Cells",
-            "clusterId": "78"
+            "clusterId": "57",
+            "clusterAbbr": "NKC",
+            "isExcluded": ""
         },
-        "79": {
+        "58": {
             "structure": "Interstitium",
             "rollupType": "Monocytes",
-            "rollupId": "17",
+            "rollupId": "16",
             "clusterType": "Monocytes",
-            "clusterId": "79"
+            "clusterId": "58",
+            "clusterAbbr": "MON",
+            "isExcluded": ""
         },
-        "80": {
+        "59": {
             "structure": "Interstitium",
             "rollupType": "Effector Memory T-cells",
-            "rollupId": "18",
+            "rollupId": "17",
             "clusterType": "Effector Memory T-cells",
-            "clusterId": "80"
+            "clusterId": "59",
+            "clusterAbbr": "T-EM",
+            "isExcluded": ""
         },
-        "82": {
+        "60": {
             "structure": "Interstitium",
             "rollupType": "Cytotoxic T-cells",
-            "rollupId": "19",
+            "rollupId": "18",
             "clusterType": "Cytotoxic T-cells (CD8+)",
-            "clusterId": "82"
+            "clusterId": "60",
+            "clusterAbbr": "T-CYT-CD8+",
+            "isExcluded": ""
         },
-        "83": {
+        "61": {
             "structure": "Interstitium",
             "rollupType": "Natural Killer T-cells",
-            "rollupId": "20",
+            "rollupId": "19",
             "clusterType": "Natural Killer T-cells",
-            "clusterId": "83"
+            "clusterId": "61",
+            "clusterAbbr": "NKT",
+            "isExcluded": ""
         },
-        "84": {
+        "62": {
             "structure": "Interstitium",
             "rollupType": "Activated T-cells",
-            "rollupId": "21",
+            "rollupId": "20",
             "clusterType": "Activated T-cells",
-            "clusterId": "84"
+            "clusterId": "62",
+            "clusterAbbr": "T-ACT",
+            "isExcluded": ""
         },
-        "85": {
+        "63": {
             "structure": "Interstitium",
             "rollupType": "Memory T-cells",
-            "rollupId": "22",
+            "rollupId": "21",
             "clusterType": "Memory T-cells",
-            "clusterId": "85"
+            "clusterId": "63",
+            "clusterAbbr": "T-MEM",
+            "isExcluded": ""
         },
-        "86": {
+        "64": {
             "structure": "Interstitium",
             "rollupType": "ISG-activated T-cells",
-            "rollupId": "23",
+            "rollupId": "22",
             "clusterType": "ISG-activated T-cells",
-            "clusterId": "86"
+            "clusterId": "64",
+            "clusterAbbr": "T-ISG-ACT",
+            "isExcluded": ""
         },
-        "87": {
+        "65": {
             "structure": "Interstitium",
             "rollupType": "B-cells",
-            "rollupId": "24",
+            "rollupId": "23",
             "clusterType": "B-cells",
-            "clusterId": "87"
+            "clusterId": "65",
+            "clusterAbbr": "B",
+            "isExcluded": ""
         }
     },
     "datasetClusters": {
@@ -494,219 +708,281 @@
             "0": {
                 "structure": "Interstitium",
                 "rollupType": "Effector Memory T-cells",
-                "rollupId": "18",
+                "rollupId": "17",
                 "clusterType": "Effector Memory T-cells",
-                "clusterId": "80"
+                "clusterId": "59",
+                "clusterAbbr": "T-EM",
+                "isExcluded": ""
             },
             "1": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules (NOS) - 1",
-                "clusterId": "6"
+                "clusterId": "6",
+                "clusterAbbr": "PT (NOS)",
+                "isExcluded": ""
             },
             "2": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules Convoluted/Straight - S2",
-                "clusterId": "15"
+                "clusterId": "14",
+                "clusterAbbr": "PT-S2",
+                "isExcluded": ""
             },
             "3": {
                 "structure": "Tubules",
                 "rollupType": "Loop of Henle",
                 "rollupId": "6",
                 "clusterType": "Descending Thin Limb (NOS)",
-                "clusterId": "20"
+                "clusterId": "19",
+                "clusterAbbr": "DTL (NOS)",
+                "isExcluded": ""
             },
             "4": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules Convoluted - S1",
-                "clusterId": "14"
+                "clusterId": "13",
+                "clusterAbbr": "PT-S1",
+                "isExcluded": ""
             },
             "5": {
                 "structure": "Interstitium",
                 "rollupType": "Cytotoxic T-cells",
-                "rollupId": "19",
+                "rollupId": "18",
                 "clusterType": "Cytotoxic T-cells (CD8+)",
-                "clusterId": "82"
+                "clusterId": "60",
+                "clusterAbbr": "T-CYT-CD8+",
+                "isExcluded": ""
             },
             "6": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells (NOS) - 1",
-                "clusterId": "50"
+                "clusterId": "42",
+                "clusterAbbr": "IC (NOS) - 1",
+                "isExcluded": ""
             },
             "7": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules (NOS) - 2",
-                "clusterId": "7"
+                "clusterId": "7",
+                "clusterAbbr": "PT (NOS)",
+                "isExcluded": ""
             },
             "8": {
                 "structure": "Interstitium",
                 "rollupType": "Macrophages",
-                "rollupId": "15",
+                "rollupId": "14",
                 "clusterType": "Macrophages",
-                "clusterId": "76"
+                "clusterId": "55",
+                "clusterAbbr": "MAC",
+                "isExcluded": ""
             },
             "9": {
                 "structure": "Vessels",
                 "rollupType": "Peritubular Capillaries",
                 "rollupId": "11",
                 "clusterType": "Peritubular Capillaries",
-                "clusterId": "65"
+                "clusterId": "49",
+                "clusterAbbr": "EC-PT",
+                "isExcluded": ""
             },
             "10": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb - Distal Straight",
-                "clusterId": "27"
+                "clusterId": "23",
+                "clusterAbbr": "TAL",
+                "isExcluded": ""
             },
             "11": {
                 "structure": "Interstitium",
                 "rollupType": "Monocytes",
-                "rollupId": "17",
+                "rollupId": "16",
                 "clusterType": "Monocytes",
-                "clusterId": "79"
+                "clusterId": "58",
+                "clusterAbbr": "MON",
+                "isExcluded": ""
             },
             "12": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells (NOS) - 1",
-                "clusterId": "42"
+                "clusterId": "35",
+                "clusterAbbr": "PC (NOS) - 1",
+                "isExcluded": ""
             },
             "13": {
                 "structure": "Glomerulus",
                 "rollupType": "Endothelial Glomerular Capillaries",
                 "rollupId": "3",
                 "clusterType": "Endothelial Glomerular Capillaries",
-                "clusterId": "4"
+                "clusterId": "4",
+                "clusterAbbr": "GC",
+                "isExcluded": ""
             },
             "14": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules Straight - S3",
-                "clusterId": "17"
+                "clusterId": "16",
+                "clusterAbbr": "PT-S3",
+                "isExcluded": ""
             },
             "15": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells Medullary Collecting Duct",
-                "clusterId": "48"
+                "clusterId": "40",
+                "clusterAbbr": "MCD-PC",
+                "isExcluded": ""
             },
             "16": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Distal Convolution / Connecting Tubule (NOS) - 1",
-                "clusterId": "39"
+                "clusterId": "32",
+                "clusterAbbr": "DCT / CNT (NOS)",
+                "isExcluded": ""
             },
             "17": {
                 "structure": "Interstitium",
                 "rollupType": "Natural Killer Cells",
-                "rollupId": "16",
+                "rollupId": "15",
                 "clusterType": "Natural Killer Cells",
-                "clusterId": "78"
+                "clusterId": "57",
+                "clusterAbbr": "NKC",
+                "isExcluded": ""
             },
             "18": {
                 "structure": "Vessels",
                 "rollupType": "Vascular Smooth Muscle Cells",
-                "rollupId": "13",
+                "rollupId": "12",
                 "clusterType": "Vascular Smooth Muscle Cells / Mesangial Cells (NOS)",
-                "clusterId": "70"
+                "clusterId": "53",
+                "clusterAbbr": "vSMC/M (NOS)",
+                "isExcluded": ""
             },
             "19": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Loop of Henle",
-                "clusterId": "34"
+                "clusterId": "30",
+                "clusterAbbr": "TALOH",
+                "isExcluded": ""
             },
             "20": {
                 "structure": "Vessels",
                 "rollupType": "Endothelial Arteries",
                 "rollupId": "10",
                 "clusterType": "Endothelial Arteriole (NOS)",
-                "clusterId": "60"
+                "clusterId": "48",
+                "clusterAbbr": "EC-AEA (NOS)",
+                "isExcluded": ""
             },
             "21": {
                 "structure": "Interstitium",
                 "rollupType": "Activated T-cells",
-                "rollupId": "21",
+                "rollupId": "20",
                 "clusterType": "Activated T-cells",
-                "clusterId": "84"
+                "clusterId": "62",
+                "clusterAbbr": "T-ACT",
+                "isExcluded": ""
             },
             "22": {
                 "structure": "Interstitium",
                 "rollupType": "Natural Killer T-cells",
-                "rollupId": "20",
+                "rollupId": "19",
                 "clusterType": "Natural Killer T-cells",
-                "clusterId": "83"
+                "clusterId": "61",
+                "clusterAbbr": "NKT",
+                "isExcluded": ""
             },
             "23": {
                 "structure": "Tubules",
                 "rollupType": "Loop of Henle",
                 "rollupId": "6",
                 "clusterType": "Loop of Henle (NOS)",
-                "clusterId": "19"
+                "clusterId": "18",
+                "clusterAbbr": "LOH (NOS)",
+                "isExcluded": ""
             },
             "24": {
                 "structure": "Interstitium",
                 "rollupType": "B-cells",
-                "rollupId": "24",
+                "rollupId": "23",
                 "clusterType": "B-cells",
-                "clusterId": "87"
+                "clusterId": "65",
+                "clusterAbbr": "B",
+                "isExcluded": ""
             },
             "25": {
                 "structure": "Glomerulus",
                 "rollupType": "Podocytes",
                 "rollupId": "2",
                 "clusterType": "Podocytes",
-                "clusterId": "2"
+                "clusterId": "2",
+                "clusterAbbr": "POD",
+                "isExcluded": ""
             },
             "26": {
                 "structure": "Glomerulus",
                 "rollupType": "Parietal Cells",
                 "rollupId": "1",
                 "clusterType": "Parietal Cells",
-                "clusterId": "1"
+                "clusterId": "1",
+                "clusterAbbr": "PEC",
+                "isExcluded": ""
             },
             "27": {
                 "structure": "Interstitium",
                 "rollupType": "ISG-activated T-cells",
-                "rollupId": "23",
+                "rollupId": "22",
                 "clusterType": "ISG-activated T-cells",
-                "clusterId": "86"
+                "clusterId": "64",
+                "clusterAbbr": "T-ISG-ACT",
+                "isExcluded": ""
             },
             "28": {
                 "structure": "Interstitium",
                 "rollupType": "Memory T-cells",
-                "rollupId": "22",
+                "rollupId": "21",
                 "clusterType": "Memory T-cells",
-                "clusterId": "85"
+                "clusterId": "63",
+                "clusterAbbr": "T-MEM",
+                "isExcluded": ""
             },
             "29": {
                 "structure": "Interstitium",
                 "rollupType": "Interstial Fibroblasts",
-                "rollupId": "14",
+                "rollupId": "13",
                 "clusterType": "Interstial Fibroblasts",
-                "clusterId": "73"
+                "clusterId": "54",
+                "clusterAbbr": "FIB",
+                "isExcluded": ""
             },
             "": {
-                "structure": "Vessels",
-                "rollupType": "Vascular Smooth Muscle Cells",
-                "rollupId": "13",
-                "clusterType": "Vascular Smooth Muscle Cells and Pericytes (NOS)",
-                "clusterId": "69"
+                "structure": "Interstitium",
+                "rollupType": "Macrophages",
+                "rollupId": "14",
+                "clusterType": "Macrophages - Tissue Resident",
+                "clusterId": "56",
+                "clusterAbbr": "MAC-TR",
+                "isExcluded": ""
             }
         },
         "MDSCRNA-SEQ": {
@@ -715,189 +991,297 @@
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 1",
-                "clusterId": "28"
+                "clusterId": "24",
+                "clusterAbbr": "TAL-1",
+                "isExcluded": ""
+            },
+            "1": {
+                "structure": "Glomerulus",
+                "rollupType": "Endothelial Glomerular Capillaries",
+                "rollupId": "3",
+                "clusterType": "Endothelial Glomerular Capillaries",
+                "clusterId": "4",
+                "clusterAbbr": "GC",
+                "isExcluded": ""
             },
             "2": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells (NOS) - 1",
-                "clusterId": "42"
+                "clusterId": "35",
+                "clusterAbbr": "PC (NOS) - 1",
+                "isExcluded": ""
             },
             "4": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules (NOS) - 4",
-                "clusterId": "9"
+                "clusterId": "9",
+                "clusterAbbr": "PT (NOS)",
+                "isExcluded": ""
             },
             "5": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules (NOS) - 5",
-                "clusterId": "10"
+                "clusterId": "10",
+                "clusterAbbr": "PT (NOS)",
+                "isExcluded": ""
             },
             "6": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells (NOS) - 1",
-                "clusterId": "50"
+                "clusterId": "42",
+                "clusterAbbr": "IC (NOS) - 1",
+                "isExcluded": ""
             },
             "7": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Distal Convolution / Connecting Tubule (NOS) - 1",
-                "clusterId": "39"
+                "clusterId": "32",
+                "clusterAbbr": "DCT / CNT (NOS)",
+                "isExcluded": ""
             },
             "8": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 6",
-                "clusterId": "33"
+                "clusterId": "29",
+                "clusterAbbr": "TAL-6",
+                "isExcluded": ""
             },
             "9": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells (NOS) - 2",
-                "clusterId": "51"
+                "clusterId": "43",
+                "clusterAbbr": "IC (NOS) - 2",
+                "isExcluded": ""
             },
             "11": {
                 "structure": "Glomerulus",
                 "rollupType": "Mesangial Cells",
                 "rollupId": "4",
                 "clusterType": "Mesangial Cells",
-                "clusterId": "5"
+                "clusterId": "5",
+                "clusterAbbr": "MC",
+                "isExcluded": ""
             },
             "12": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells (NOS) - 2",
-                "clusterId": "43"
+                "clusterId": "36",
+                "clusterAbbr": "PC (NOS) - 2",
+                "isExcluded": ""
             },
             "13": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules (NOS) - 6",
-                "clusterId": "11"
+                "clusterId": "11",
+                "clusterAbbr": "PT (NOS)",
+                "isExcluded": ""
+            },
+            "14": {
+                "structure": "Vessels",
+                "rollupType": "Endothelial Arteries",
+                "rollupId": "10",
+                "clusterType": "Endothelial Arteriole (NOS)",
+                "clusterId": "48",
+                "clusterAbbr": "EC-AEA (NOS)",
+                "isExcluded": ""
             },
             "15": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 4",
-                "clusterId": "31"
+                "clusterId": "27",
+                "clusterAbbr": "TAL-4",
+                "isExcluded": ""
             },
             "16": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells (NOS) - 3",
-                "clusterId": "44"
+                "clusterId": "37",
+                "clusterAbbr": "PC (NOS) - 3",
+                "isExcluded": ""
             },
             "17": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 2",
-                "clusterId": "29"
+                "clusterId": "25",
+                "clusterAbbr": "TAL-2",
+                "isExcluded": ""
             },
             "18": {
-                "structure": "Vessels",
-                "rollupType": "Endothelial Lymphatic Cells",
-                "rollupId": "12",
-                "clusterType": "Lymphatic Cells",
-                "clusterId": "68"
+                "structure": "Interstitium",
+                "rollupType": "Natural Killer T-cells",
+                "rollupId": "19",
+                "clusterType": "Natural Killer T-cells",
+                "clusterId": "61",
+                "clusterAbbr": "NKT",
+                "isExcluded": ""
+            },
+            "19": {
+                "structure": "Interstitium",
+                "rollupType": "Macrophages",
+                "rollupId": "14",
+                "clusterType": "Macrophages",
+                "clusterId": "55",
+                "clusterAbbr": "MAC",
+                "isExcluded": ""
             },
             "20": {
                 "structure": "Glomerulus",
                 "rollupType": "Podocytes",
                 "rollupId": "2",
                 "clusterType": "Podocytes",
-                "clusterId": "2"
+                "clusterId": "2",
+                "clusterAbbr": "POD",
+                "isExcluded": ""
             },
             "21": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Distal Convolution / Connecting Tubule (NOS) - 2",
-                "clusterId": "40"
+                "clusterId": "33",
+                "clusterAbbr": "DCT / CNT (NOS)",
+                "isExcluded": ""
             },
             "22": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules (NOS) - 3",
-                "clusterId": "8"
+                "clusterId": "8",
+                "clusterAbbr": "PT (NOS)",
+                "isExcluded": ""
             },
             "23": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells (NOS) - 4",
-                "clusterId": "45"
+                "clusterId": "38",
+                "clusterAbbr": "PC (NOS) - 4",
+                "isExcluded": ""
             },
             "24": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 3",
-                "clusterId": "30"
+                "clusterId": "26",
+                "clusterAbbr": "TAL-3",
+                "isExcluded": ""
             },
             "25": {
                 "structure": "Tubules",
-                "rollupType": "Proximal Tubules",
-                "rollupId": "5",
-                "clusterType": "Proximal Tubules (NOS) - 7",
-                "clusterId": "12"
+                "rollupType": "Loop of Henle",
+                "rollupId": "6",
+                "clusterType": "Descending Thin Limb (NOS)",
+                "clusterId": "19",
+                "clusterAbbr": "DTL (NOS)",
+                "isExcluded": ""
             },
             "26": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 5",
-                "clusterId": "32"
+                "clusterId": "28",
+                "clusterAbbr": "TAL-5",
+                "isExcluded": ""
             },
             "27": {
                 "structure": "Glomerulus",
                 "rollupType": "Podocytes",
                 "rollupId": "2",
                 "clusterType": "Podocytes",
-                "clusterId": "3"
+                "clusterId": "3",
+                "clusterAbbr": "POD",
+                "isExcluded": ""
+            },
+            "28": {
+                "structure": "Interstitium",
+                "rollupType": "Interstial Fibroblasts",
+                "rollupId": "13",
+                "clusterType": "Interstial Fibroblasts",
+                "clusterId": "54",
+                "clusterAbbr": "FIB",
+                "isExcluded": ""
             },
             "29": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells (NOS) - 3",
-                "clusterId": "52"
+                "clusterId": "44",
+                "clusterAbbr": "IC (NOS) - 3",
+                "isExcluded": ""
+            },
+            "30": {
+                "structure": "Tubules",
+                "rollupType": "Loop of Henle",
+                "rollupId": "6",
+                "clusterType": "Loop of Henle (NOS)",
+                "clusterId": "18",
+                "clusterAbbr": "LOH (NOS)",
+                "isExcluded": ""
+            },
+            "31": {
+                "structure": "Vessels",
+                "rollupType": "Peritubular Capillaries",
+                "rollupId": "11",
+                "clusterType": "Peritubular Capillaries",
+                "clusterId": "49",
+                "clusterAbbr": "EC-PT",
+                "isExcluded": ""
             },
             "33": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells Type B",
-                "clusterId": "55"
+                "clusterId": "47",
+                "clusterAbbr": "IC-B",
+                "isExcluded": ""
             },
             "36": {
                 "structure": "Interstitium",
                 "rollupType": "B-cells",
-                "rollupId": "24",
+                "rollupId": "23",
                 "clusterType": "B-cells",
-                "clusterId": "87"
+                "clusterId": "65",
+                "clusterAbbr": "B",
+                "isExcluded": ""
             },
             "": {
                 "structure": "Interstitium",
                 "rollupType": "ISG-activated T-cells",
-                "rollupId": "23",
+                "rollupId": "22",
                 "clusterType": "ISG-activated T-cells",
-                "clusterId": "86"
+                "clusterId": "64",
+                "clusterAbbr": "T-ISG-ACT",
+                "isExcluded": ""
             }
         },
         "SNDROP-SEQ": {
@@ -906,196 +1290,261 @@
                 "rollupType": "Podocytes",
                 "rollupId": "2",
                 "clusterType": "Podocytes",
-                "clusterId": "2"
+                "clusterId": "2",
+                "clusterAbbr": "POD",
+                "isExcluded": ""
             },
             "3": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules Convoluted - S1",
-                "clusterId": "14"
+                "clusterId": "13",
+                "clusterAbbr": "PT-S1",
+                "isExcluded": ""
             },
             "4": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules Convoluted/Straight - S2",
-                "clusterId": "15"
+                "clusterId": "14",
+                "clusterAbbr": "PT-S2",
+                "isExcluded": ""
             },
             "5": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules (NOS) - Stress/Inflam",
-                "clusterId": "13"
+                "clusterId": "12",
+                "clusterAbbr": "PT (NOS) SI",
+                "isExcluded": ""
             },
             "6": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules Straight - S3 - Fibrinogen+",
-                "clusterId": "18"
+                "clusterId": "17",
+                "clusterAbbr": "PT-S3 - F+",
+                "isExcluded": ""
             },
             "7": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Proximal Tubules Straight - S3",
-                "clusterId": "17"
+                "clusterId": "16",
+                "clusterAbbr": "PT-S3",
+                "isExcluded": ""
             },
             "8": {
                 "structure": "Tubules",
                 "rollupType": "Loop of Henle",
                 "rollupId": "6",
                 "clusterType": "Descending Thin Limb (NOS)",
-                "clusterId": "20"
+                "clusterId": "19",
+                "clusterAbbr": "DTL (NOS)",
+                "isExcluded": ""
             },
             "9": {
                 "structure": "Tubules",
                 "rollupType": "Loop of Henle",
                 "rollupId": "6",
                 "clusterType": "Ascending Thin Limb - 1",
-                "clusterId": "24"
+                "clusterId": "20",
+                "clusterAbbr": "aTL-1",
+                "isExcluded": ""
             },
             "10": {
                 "structure": "Tubules",
                 "rollupType": "Loop of Henle",
                 "rollupId": "6",
                 "clusterType": "Ascending Thin Limb - 2",
-                "clusterId": "25"
+                "clusterId": "21",
+                "clusterAbbr": "aTL-2",
+                "isExcluded": ""
             },
             "11": {
                 "structure": "Tubules",
                 "rollupType": "Loop of Henle",
                 "rollupId": "6",
                 "clusterType": "Ascending Thin Limb - 3",
-                "clusterId": "26"
+                "clusterId": "22",
+                "clusterAbbr": "aTL-3",
+                "isExcluded": ""
             },
             "12": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 1",
-                "clusterId": "28"
+                "clusterId": "24",
+                "clusterAbbr": "TAL-1",
+                "isExcluded": ""
             },
             "13": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Thick Ascending Limb (NOS) - 2",
-                "clusterId": "29"
+                "clusterId": "25",
+                "clusterAbbr": "TAL-2",
+                "isExcluded": ""
             },
             "14": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Distal Convoluted Tubule (NOS)",
-                "clusterId": "36"
+                "clusterId": "31",
+                "clusterAbbr": "DCT (NOS)",
+                "isExcluded": ""
             },
             "15": {
                 "structure": "Tubules",
                 "rollupType": "Distal Tubules",
                 "rollupId": "7",
                 "clusterType": "Connecting Tubule (NOS)",
-                "clusterId": "41"
+                "clusterId": "34",
+                "clusterAbbr": "CNT",
+                "isExcluded": ""
             },
             "16": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells Cortical Collecting Duct",
-                "clusterId": "47"
+                "clusterId": "39",
+                "clusterAbbr": "CCD-PC",
+                "isExcluded": ""
             },
             "17": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells - Stressed Dissoc Subset",
-                "clusterId": "49"
+                "clusterId": "41",
+                "clusterAbbr": "StressPC",
+                "isExcluded": ""
             },
             "18": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Principal Cells",
                 "rollupId": "8",
                 "clusterType": "Collecting System - Principal Cells Medullary Collecting Duct",
-                "clusterId": "48"
+                "clusterId": "40",
+                "clusterAbbr": "MCD-PC",
+                "isExcluded": ""
             },
             "19": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells Type A (Medulla)",
-                "clusterId": "54"
+                "clusterId": "46",
+                "clusterAbbr": "IC-A2",
+                "isExcluded": ""
             },
             "20": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells Type A (Cortex)",
-                "clusterId": "53"
+                "clusterId": "45",
+                "clusterAbbr": "IC-A1",
+                "isExcluded": ""
             },
             "21": {
                 "structure": "Tubules",
                 "rollupType": "Collecting Duct Intercalated Cells",
                 "rollupId": "9",
                 "clusterType": "Collecting System - Intercalated Cells Type B",
-                "clusterId": "55"
+                "clusterId": "47",
+                "clusterAbbr": "IC-B",
+                "isExcluded": ""
             },
             "22": {
                 "structure": "Glomerulus",
                 "rollupType": "Endothelial Glomerular Capillaries",
                 "rollupId": "3",
                 "clusterType": "Endothelial Glomerular Capillaries",
-                "clusterId": "4"
+                "clusterId": "4",
+                "clusterAbbr": "GC",
+                "isExcluded": ""
             },
             "23": {
                 "structure": "Vessels",
                 "rollupType": "Peritubular Capillaries",
                 "rollupId": "11",
                 "clusterType": "Aescending Vasa Recta",
-                "clusterId": "67"
+                "clusterId": "51",
+                "clusterAbbr": "EC-AVR",
+                "isExcluded": ""
             },
             "24": {
                 "structure": "Vessels",
                 "rollupType": "Peritubular Capillaries",
                 "rollupId": "11",
                 "clusterType": "Descending Vasa Recta",
-                "clusterId": "66"
+                "clusterId": "50",
+                "clusterAbbr": "EC-DVR",
+                "isExcluded": ""
             },
             "26": {
                 "structure": "Glomerulus",
                 "rollupType": "Mesangial Cells",
                 "rollupId": "4",
                 "clusterType": "Mesangial Cells",
-                "clusterId": "5"
+                "clusterId": "5",
+                "clusterAbbr": "MC",
+                "isExcluded": ""
             },
             "27": {
                 "structure": "Vessels",
                 "rollupType": "Vascular Smooth Muscle Cells",
-                "rollupId": "13",
+                "rollupId": "12",
                 "clusterType": "Vascular Smooth Muscle Cells and Pericytes (NOS)",
-                "clusterId": "69"
+                "clusterId": "52",
+                "clusterAbbr": "vSMC/P (NOS)",
+                "isExcluded": ""
+            },
+            "28": {
+                "structure": "Interstitium",
+                "rollupType": "Interstial Fibroblasts",
+                "rollupId": "13",
+                "clusterType": "Interstial Fibroblasts",
+                "clusterId": "54",
+                "clusterAbbr": "FIB",
+                "isExcluded": ""
             },
             "29": {
                 "structure": "Tubules",
                 "rollupType": "Proximal Tubules",
                 "rollupId": "5",
                 "clusterType": "Novel Proximal Tubules CFH+ Subpopulation (S2)",
-                "clusterId": "16"
+                "clusterId": "15",
+                "clusterAbbr": "PT-S2 - CFH+",
+                "isExcluded": ""
             },
             "30": {
                 "structure": "Interstitium",
                 "rollupType": "Macrophages",
-                "rollupId": "15",
-                "clusterType": "Macrophages",
-                "clusterId": "76"
+                "rollupId": "14",
+                "clusterType": "Macrophages - Tissue Resident",
+                "clusterId": "56",
+                "clusterAbbr": "MAC-TR",
+                "isExcluded": ""
             },
             "": {
                 "structure": "Interstitium",
                 "rollupType": "B-cells",
-                "rollupId": "24",
+                "rollupId": "23",
                 "clusterType": "B-cells",
-                "clusterId": "87"
+                "clusterId": "65",
+                "clusterAbbr": "B",
+                "isExcluded": ""
             }
         }
     }
