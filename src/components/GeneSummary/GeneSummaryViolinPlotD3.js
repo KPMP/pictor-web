@@ -34,9 +34,17 @@ class GeneSummaryViolinPlotD3 extends Component {
 			this.showNoResults(id, width, margin);
 		} else {
 			d3.csv(path, function(error, data) {
+				
 				if (error && error.target.status === 404) {
 					thisComponent.showNoResults(id, width, margin);
 				} else {
+					let maxValue = 0;
+					data.forEach(function(row) {
+						if (row.readcount > maxValue) {
+							maxValue = row.readcount;
+						}
+					});
+					
 					let svg = d3.select(id)
 						.append("svg")
 						.attr("width", width + margin.left + margin.right)
@@ -45,7 +53,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 					
 					var y = d3.scaleLinear()
-				    	.domain([0,5])
+				    	.domain([0,maxValue])
 				    	.range([height, 0]);
 					
 					svg.append("g").call( d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")) );
@@ -66,17 +74,18 @@ class GeneSummaryViolinPlotD3 extends Component {
 			        		let input = d.map(function(g) { return g.readcount;});
 			        		var histogram = d3.histogram()
 			        			.domain(y.domain())
-			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,5))
+			        			.thresholds(d3.thresholdFreedmanDiaconis(input,0,maxValue))
 			        			.value(d => d);
 			        		let bins = histogram(input);
 			        		return(bins);
 			        	})
 			        	.entries(data);
 		
-			        let maxWidth = (width/48);
-			        var xNum = d3.scaleLinear()
+			        let maxWidth = (width/24);
+			        var xNum = d3.scaleLog()
 				    	.range([0, x.bandwidth()])
-				    	.domain([-maxWidth,maxWidth]);
+				    	.domain([0.1,maxWidth])
+				    	.clamp(true);
 		
 			        var myColor = d3.scaleSequential().domain([1,24]).interpolator(d3ScaleChromatic.interpolateSinebow);
 			        
@@ -84,7 +93,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 				    	.data(sumstat)
 				    	.enter()        
 				    	.append("g")
-				    	.attr("transform", function(d){ return("translate(" + x(d.key) +" ,0)") } ) 
+				    	.attr("transform", function(d){ console.log(d.key); return("translate(" + ( x(d.key) + maxWidth/2) +" ,0)") } ) 
 				    	.append("path")
 				    	.style("fill", function(d) {
 				    		return myColor(d.key);
@@ -92,8 +101,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 				        .datum(function(d){ return(d.value)})     
 				        .style("stroke", "black")
 				        .attr("d", d3.area()
-				            .x0(d => xNum(-(d.length/(maxWidth))) )
-				            .x1(d => xNum(d.length/(maxWidth)) )
+				            .x0(d => -(xNum(d.length/(maxWidth*2))) )
+				            .x1(d => xNum(d.length/(maxWidth*2)) )
 				            .y(d => y(d.x0))
 				            .curve(d3.curveCatmullRom)    
 				        );
