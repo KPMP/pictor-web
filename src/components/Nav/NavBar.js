@@ -10,7 +10,7 @@ class NavBar extends Component {
           <Link to="/" className="navbar-header">
             <NavbarBrand className="d-flex align-items-center">
               <img src="img/logo.png" alt="Atlas Concept" className="logo" />
-        	  <span id="title-text" className="ml-2 text-dark">Atlas Concept</span>
+        	  <span id="title-text" className="ml-2 text-dark">Gene Search: Transcriptomics Concept</span>
             </NavbarBrand>
           </Link>
         </Col>

@@ -27,8 +27,10 @@ class GeneSummaryViolinPlotD3 extends Component {
 		
 		let margin = {top: 10, right: 30, bottom: 30, left: 30};
 		let width = 1100 - margin.left - margin.right;
-		let height = 200 - margin.top - margin.bottom;
+		let height = 140 - margin.top - margin.bottom;
 		let path = Api.getDatasetGeneViolinPlotFilename(this.props.datasetName, this.props.selectedGene);
+		let viewBoxWidth = width + margin.left + margin.right;
+		let viewBoxHeight = height + margin.top + margin.bottom;
 		
 		if (this.props.selectedGene === "") {
 			this.showNoResults(id, width, margin);
@@ -47,8 +49,8 @@ class GeneSummaryViolinPlotD3 extends Component {
 					
 					let svg = d3.select(id)
 						.append("svg")
-						.attr("width", width + margin.left + margin.right)
-						.attr("height", height + margin.top + margin.bottom)
+						.attr("preserveAspectRatio", "xMinYMin meet")
+						.attr("viewBox", "0 0 " + viewBoxWidth + " " + viewBoxHeight)
 						.append("g")
 						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 					
@@ -60,7 +62,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 		
 					var x = d3.scaleBand()
 				    	.range([ 0, width ])
-				    	.domain([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24])
+				    	.domain([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23])
 				    	.padding(0.1);
 					
 					svg.append("g")

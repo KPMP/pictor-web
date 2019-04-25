@@ -30,11 +30,11 @@ class GeneSummaryLegend extends Component {
 		}
 		
 		return (
-			<Col xs="3">{groupName}
+			<div>{groupName}
 				<ul>
 					{items}
 				</ul>
-			</Col>
+			</div>
 		);
 	}
 	
@@ -43,11 +43,13 @@ class GeneSummaryLegend extends Component {
 		const groups = Object.keys(legendGroups);
 		return(
 			<div>
-				<span id="gene-summary-legend-title">Legend</span>
+				<p id="gene-summary-legend-title">Legend</p>
 				<Row>
+					<Col>
 					{ groups.map((group) => {
 						return this.generateLegendForGroup(group, legendGroups[group]);
 					})}
+					</Col>
 				</Row>
 			</div>
 		)

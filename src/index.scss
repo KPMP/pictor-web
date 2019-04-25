@@ -2,13 +2,20 @@
 @import "common-values.scss";
 
 #search-for-gene {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
 	.ant-select-auto-complete.ant-select .ant-input {
 		height: 38px !important;
+	}
+
+	#gene-search-label {
+		font-size: 20px;
+		font-weight: bold;
 	}
 }
 
 #title-text {
-	font-size: 20px;
 	font-weight: 500;
 	@media only screen and (max-width: 767px) {
 		display: none;
@@ -18,6 +25,10 @@
 #gene-summary-page {
 
 	background: #FAFBFC;
+
+	@media only screen and (min-width : 1200px) {
+		max-width: 1500px !important;
+	}
 
 	#gene-summary-page-header {
 		padding-top: 20px;
