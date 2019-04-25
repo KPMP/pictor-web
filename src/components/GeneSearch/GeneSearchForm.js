@@ -54,9 +54,8 @@ class GeneSearchForm extends Component {
         return(
             <Card className="mt-3">
                 <CardBody id="search-for-gene">
-                    <h5>Search by gene</h5>
-                    <Form>
-                        <Form.Item validateStatus={this.state.validateStatus} help={this.state.help}>
+                    <Form layout="inline">
+                        <Form.Item colon={false} label={<span id="gene-search-label">Search by gene</span>} validateStatus={this.state.validateStatus} help={this.state.help}>
                             {getFieldDecorator('geneSymbol', { })(
                             		<AutoComplete style={{"width": "200px"}} dataSource={this.state.dataSource} className="pr-3"
                             			onSearch={this.handleSearch} onSelect={this.handleSelect} name="geneSymbol"
