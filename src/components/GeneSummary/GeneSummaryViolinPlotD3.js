@@ -43,10 +43,10 @@ class GeneSummaryViolinPlotD3 extends Component {
 					let maxValue = 0;
 					data.forEach(function(row) {
 						if (row.readcount > maxValue) {
-							maxValue = row.readcount;
+							maxValue = Math.ceil(row.readcount);
 						}
 					});
-					
+
 					let svg = d3.select(id)
 						.append("svg")
 						.attr("preserveAspectRatio", "xMinYMin meet")
@@ -55,7 +55,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 					
 					var y = d3.scaleLinear()
-				    	.domain([0,maxValue])
+				    	.domain([0, maxValue])
 				    	.range([height, 0]);
 					
 					svg.append("g").call( d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")) );
@@ -83,7 +83,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 			        	})
 			        	.entries(data);
 		
-			        let maxWidth = (width/24);
+			        let maxWidth = (width/23);
 			        var xNum = d3.scaleLog()
 				    	.range([0, x.bandwidth()])
 				    	.domain([0.1,maxWidth])
@@ -95,7 +95,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 				    	.data(sumstat)
 				    	.enter()        
 				    	.append("g")
-				    	.attr("transform", function(d){ console.log(d.key); return("translate(" + ( x(d.key) + maxWidth/2) +" ,0)") } ) 
+				    	.attr("transform", function(d){ return("translate(" + ( x(d.key) + maxWidth/2) +" ,0)") } )
 				    	.append("path")
 				    	.style("fill", function(d) {
 				    		return myColor(d.key);
