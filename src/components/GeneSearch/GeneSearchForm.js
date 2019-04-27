@@ -22,16 +22,19 @@ class GeneSearchForm extends Component {
     }
 
     handleSearch = (value) => {
-        if (value === "" || value === undefined) {
+        if (value === "" || value === undefined || value.length < 2) {
             this.setState({dataSource: []});
         } else {
-            let limitedList = this.state.geneList.filter(gene => gene.toUpperCase().indexOf(value.toUpperCase()) !== -1);
+            let limitedList = this.state.geneList.filter(gene => {
+                const matches = gene.toUpperCase().match('^' + value.toUpperCase());
+                return matches && matches.length > 0;
+            });
             if (limitedList.length === 0) {
                 this.setState({validateStatus: "error", help: "Gene not found"});
             } else {
                 this.setState({validateStatus: "success", help:""});
             }
-            this.setState({dataSource: limitedList.slice(0,10)});
+            this.setState({dataSource: limitedList});
         }
     }
 
