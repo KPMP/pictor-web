@@ -58,7 +58,7 @@ class GeneSummaryViolinPlotD3 extends Component {
 				    	.domain([0, maxValue])
 				    	.range([height, 0]);
 					
-					svg.append("g").call( d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")) );
+					svg.append("g").call( d3.axisLeft(y).ticks(maxValue).tickFormat(d3.format("d")) );
 		
 					var x = d3.scaleBand()
 				    	.range([ 0, width ])
