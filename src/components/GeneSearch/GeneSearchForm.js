@@ -28,7 +28,7 @@ class GeneSearchForm extends Component {
             this.setState({dataSource: []});
         } else {
             let limitedList = this.state.geneList.filter(gene => {
-                const compGene = gene.length >= value.length ? gene.slice(0, value.length) : false;
+                const compGene = gene.length >= value.length ? gene.slice(0, value.length).toUpperCase() : false;
                 return compGene === compValue;
             });
             if (limitedList.length === 0) {
